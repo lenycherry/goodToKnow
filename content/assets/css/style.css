@@ -1,0 +1,742 @@
+/* CSS RESET http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126  
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: 'Oswald', sans-serif;
+}
+
+.btn {
+    color: rgb(106, 138, 159);
+    transition: all 0.5s;
+    position: relative;
+    padding: 10px;
+    margin: 5px;
+    width: max-content;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(27, 33, 39, 0.1);
+    transition: all 0.3s;
+}
+
+.btn:hover::before {
+    opacity: 0;
+    transform: scale(0.5, 0.5);
+}
+
+.btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.3s;
+    border: 1px solid rgba(27, 33, 39, 0.5);
+    transform: scale(1.2, 1.2);
+}
+
+.btn:hover::after {
+    opacity: 1;
+    transform: scale(1, 1);
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    font-family: 'New Roman', sans-serif;
+    word-break: break-word;
+    line-height: 1.4;
+}
+
+button {
+    border: none;
+    font-size: inherit;
+    font-family: 'Oswald', sans-serif;
+}
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////////HEADER//////////////////*/
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(27, 33, 39, 0.5);
+    transition: all ease 0.5s;
+}
+
+header:hover {
+    background-color: rgb(27, 33, 39);
+}
+
+header h1 {
+    margin-left: 10px;
+}
+
+header h1:hover a {
+    color: rgb(183, 201, 214);
+}
+
+header h1 a {
+    text-decoration: none;
+    color: rgba(106, 138, 159, 1.0);
+}
+
+#main_navbar {
+    position: relative;
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#main_navbar ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+#main_navbar li {
+    list-style: none;
+    position: relative;
+    padding: 20px 20px;
+}
+
+#main_navbar li i {
+    text-decoration: none;
+    color: rgba(106, 138, 159, 1.0);
+    transition: all ease 0.2s;
+}
+
+#main_navbar li:hover i {
+    color: rgb(183, 201, 214);
+    transform: scale(1.1);
+}
+
+/*///////////////////////////////////////////////////////////////////////////////////////////MAIN//////////////////*/
+main {
+    display: flex;
+    align-items: center;
+    min-height: 85vh;
+    position: relative;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+/*///////////////////////////////////////////////////////////////////////////////////////////FOOTER//////////////////*/
+.back_to_up_btn {
+    color: rgba(106, 138, 159, 0.5);
+    position: fixed;
+    bottom: 0;
+    width: 3%;
+    right: 15px;
+    margin: 5px;
+    padding: 5px;
+    transition: all ease 0.2s;
+    z-index: 100;
+}
+
+.back_to_up_btn:hover {
+    color: rgba(106, 138, 159, 1.0);
+    transform: scale(1.1);
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(27, 33, 39, 0.6);
+    width: 100%;
+    padding: 20px 0px;
+}
+
+footer p {
+    color: rgb(106, 138, 159);
+}
+
+footer a {
+    color: rgb(106, 138, 159);
+    font-weight: 600;
+}
+
+/*/////////////////////////////////////////////////////////////////////////////////////////HOME PAGE/////////////////*/
+/*****************************************Title******************/
+#title_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+
+#title_container h1 {
+    font-size: 70px;
+    padding-bottom: 55px;
+}
+
+#title_container h3 {
+    font-size: 20px;
+    padding-bottom: 100px;
+}
+
+/*****************************************Home Content******************/
+#main_home_content {
+    display: flex;
+    flex-flow: row wrap;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 2px;
+    padding: 60px 0px 60px 40px;
+    box-shadow: 5px 5px 2px 1px rgba(27, 33, 39, 0.5);
+}
+
+#articles_container {
+    display: flex;
+    flex-flow: row wrap;
+    align-content: center;
+    width: 56%;
+    border-right: rgb(106, 138, 159) solid 2px;
+    padding-right: 40px;
+}
+
+/*////////////////////////////////////////////////////////////////////////article PAGE///////////////////////*/
+#article_page_container {
+    width: 60%;
+    margin-top: 50px;
+}
+
+/*************************************article******************/
+#article_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-radius: 2px;
+    padding: 30px 60px;
+    box-shadow: 5px 5px 2px 1px rgba(27, 33, 39, 0.5);
+}
+
+#article_container img {
+    max-width: 100%;
+    height: auto;
+}
+
+#article_container h1 {
+    color: rgb(27, 33, 39);
+    margin-bottom: 100px;
+}
+
+#article_container .date {
+    margin-top: 20px;
+}
+
+/************************************Comment******************/
+#comments_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 15px 0px 15px 0px;
+    background-color: white;
+    box-shadow: 5px 5px 2px 1px rgba(27, 33, 39, 0.5);
+}
+
+.article_comment_container {
+    background-color: white;
+    padding: 15px;
+    border-top: 1px solid rgb(106, 138, 159);
+
+}
+.article_comment_container h3{
+padding-bottom: 10px;
+}
+.article_comment_container .comment_btn_container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.comment_btn_container .btn {
+    margin-right: 10px;
+}
+
+.article_comment_container .date_time_comment {
+    font-size: 12px;
+    margin: 10px 0px;
+}
+
+#form_add_comment_container {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0 15px 7%;
+}
+
+#area_add_comment_container {
+    border: solid 1px black;
+    height: 100px;
+    width: 90%;
+}
+
+#form_add_comment_container label {
+    color: rgb(106, 138, 159);
+}
+
+/*/////////////////////////////////////////////////////////////////////////////TINYMCE///////////////////////*/
+.tox-tinymce {
+    min-height: 60vh;
+}
+
+/*///////////////////////////////////////////////////////////////////////////ADMIN PANEL/////////////////////*/
+#admin_main_container {
+    width: 90%;
+    min-height: 80vh;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 5px 5px 2px 1px rgba(27, 33, 39, 0.5);
+}
+
+#admin_main_container h1 {
+    text-align: center;
+    margin: 10px;
+    cursor: pointer;
+    color: rgb(106, 138, 159);
+}
+
+#menu_admin {
+    display: flex;
+    justify-content: center;
+}
+
+#menu_admin .btn {
+    margin: 10px;
+    cursor: pointer;
+}
+
+.visible {
+    display: block;
+}
+
+.invisible {
+    display: none;
+}
+
+/******************************************Admin articles**************/
+#admin_article {
+    padding: 40px 0px 0px 33px;
+}
+
+.list_content_admin {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    margin-top: 15px;
+}
+
+.admin_content_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 250px;
+    height: 350px;
+    margin: 10px 10px 0px 0px;
+    border: 1px solid rgb(106, 138, 159);
+    padding: 15px 5px;
+
+}
+
+.admin_content_container img {
+    max-width: 100%;
+    height: auto;
+}
+
+.admin_content_container .bloc_btn {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.admin_content_container .resume {
+    overflow: hidden;
+    padding: 0px 10px;
+
+}
+
+.admin_content_container .date_time {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    font-size: 12px;
+    margin: 10px;
+}
+
+/*****************************************Admin comments**************/
+#admin_comment {
+    padding: 40px 0px 0px 33px;
+}
+
+#admin_comment h2 {
+    text-align: center;
+    color: rgb(106, 138, 159);
+}
+
+.admin_comments_content {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+#admin_comment_container .admin_content_container {
+    overflow: auto;
+}
+
+#admin_comment_container .title_article_comment {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: baseline;
+}
+
+.title_article_comment {
+    cursor: pointer;
+    padding: 10px;
+}
+
+.com_visible {
+    display: flex;
+}
+
+.com_invisible {
+    display: none;
+}
+
+/***********************************Admin comments reported**************/
+
+#admin_comment_reported {
+    padding: 40px 0px 0px 33px;
+}
+
+#admin_comment_reported h2 {
+    text-align: center;
+    color: rgb(106, 138, 159);
+}
+
+#admin_comment_reported .message_report_content {
+    color: rgb(218, 103, 74);
+    font-size: small;
+}
+
+/*////////////////////////////////////////////EDIT COMMENT PAGE//////////////////////////////////////////////////////////////////*/
+#edit_page_container {
+    display: flex;
+    flex-flow: column wrap;
+    width: 60%;
+    height: 80vh;
+    justify-content: center;
+}
+
+#edit_page_container form {
+    display: flex;
+    flex-direction: column;
+}
+
+#edit_page_container label {
+    font-size: larger;
+    color: rgb(27, 33, 39);
+}
+
+#area_comment_container {
+    height: 300px;
+    margin-bottom: 15px;
+    padding: 15px;
+}
+
+#edit_page_container input {
+    color: rgb(106, 138, 159);
+    width: max-content;
+    margin: auto;
+    padding: 10px;
+}
+
+/*////////////////////////////////////////////CREATE ARTICLE PAGE//////////////////////////////////////////////////////////////////*/
+#create_article_page_container {
+    width: 60%;
+}
+
+#create_article_page_container form {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+#create_article_page_container label {
+    color: rgb(27, 33, 39);
+    font-size: x-large;
+}
+
+#create_article_page_container #title {
+    color: rgb(27, 33, 39);
+    width: auto;
+    height: 30px;
+}
+
+#create_article_page_container .btn {
+    width: max-content;
+    align-self: center;
+    margin: 10px;
+}
+
+/*////////////////////////////////////////////EDIT ARTICLE PAGE//////////////////////////////////////////////////////////////////*/
+#edit_article_page_container {
+    width: 60%;
+}
+
+#edit_article_page_container form {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+#edit_article_page_container label {
+    color: rgb(27, 33, 39);
+    font-size: x-large;
+}
+
+#edit_article_page_container #title {
+    color: rgb(27, 33, 39);
+    width: auto;
+    height: 30px;
+}
+
+#edit_article_page_container .valid_btn {
+    width: max-content;
+    align-self: center;
+    margin: 10px;
+}
+
+/*////////////////////////////////////////////LOGIN PAGE//////////////////////////////////////////////////////////////////*/
+#login_forms_container {
+    display: flex;
+    flex-flow: row wrap;
+    width: 60%;
+    height: 80vh;
+    background-color: white;
+    align-content: space-evenly;
+    box-shadow: 5px 5px 2px 1px rgba(27, 33, 39, 0.5);
+    min-height: 420px;
+}
+
+#log_forms {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    height: max-content;
+    align-self: center;
+}
+
+#log_forms h3 {
+    color: rgb(106, 138, 159);
+    margin-bottom: 10px;
+}
+
+#log_forms input {
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+#login_form_container form {
+    display: flex;
+    flex-direction: column;
+}
+
+#register_form_container form {
+    display: flex;
+    flex-direction: column;
+}
+
+#register_form_container::before {
+    content: " ";
+    background-color: rgb(106, 138, 159);
+    width: 2px;
+    height: 300px;
+    position: absolute;
+    right: 50%;
+}
+
+#error_login_container {
+    width: max-content;
+    margin: auto;
+    border-bottom: rgb(218, 103, 74) 1px solid;
+    padding: 5px;
+}
+
+#error_login_container li {
+    list-style: none;
+    color: rgb(218, 103, 74);
+}
+
+#login_forms_container .btn {
+    margin-top: 10px;
+}
+
+#login_forms_container label {
+    color: rgb(106, 138, 159);
+    font-size: small;
+}
+
+
+/*////////////////////////////////////////////////////////////////ALERT MESSAGE/////////////////////////////////////////////////////////////////////*/
+.alert {
+    background-color: rgba(27, 33, 39, 0.5);
+    word-break: break-all;
+}
+
+.alert-success {
+    color: rgb(133, 173, 151);
+    text-align: center;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.alert-success::before {
+    content: " ";
+    background-color: rgb(133, 173, 151);
+    width: 100px;
+    height: 2px;
+    margin-right: 10px;
+}
+
+.alert-success::after {
+    content: " ";
+    background-color: rgb(133, 173, 151);
+    width: 100px;
+    height: 2px;
+    margin-left: 10px;
+
+}
+
+.alert-fail {
+    color: rgb(218, 103, 74);
+    text-align: center;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.alert-fail::before {
+    content: " ";
+    background-color: rgb(218, 103, 74);
+    width: 100px;
+    height: 2px;
+    margin-right: 10px;
+}
+
+.alert-fail::after {
+    content: " ";
+    background-color: rgb(218, 103, 74);
+    width: 100px;
+    height: 2px;
+    margin-left: 10px;
+}
+

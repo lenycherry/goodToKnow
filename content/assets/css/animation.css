@@ -1,0 +1,10 @@
+/*////////////////////////////////////IntersectionObserver//////////////////////:*/
+/*Apparition smooth des éléments de page*/
+.reveal-loaded .reveal{
+    opacity: 0 !important;
+    transform: translateY(40px) !important;
+    transition: cubic-bezier(0.8, 0.1, 0, 1) 0s !important;
+}
+.reveal-loaded {
+    transition: 1s;
+}

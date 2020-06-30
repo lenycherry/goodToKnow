@@ -11,7 +11,7 @@ class Comment
     private $edit_date;
     private $reported;
     private $acquit;
-    private $chapter_id;
+    private $article_id;
 
     public function getId()
     {
@@ -69,12 +69,12 @@ class Comment
     {
         $this->acquit = $acquit;
     }
-    public function getChapterId()
+    public function getArticleId()
     {
-        return $this->chapter_id;
+        return $this->article_id;
     }
-    public function setChapterId($chapter_id)
+    public function setArticleId($article_id)
     {
-        $this->chapter_id = $chapter_id;
+        $this->article_id = $article_id;
     }
 }

@@ -1,0 +1,189 @@
+/*//////////////////////////////////////////////////HOME PAGE///////////////////////////////////////////////////*/
+@media screen and (max-width:1024px) {
+    #articles_container {
+        width: 100%;
+        border: none;
+        margin-bottom: 50px;
+    }
+
+    #new_article_container {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width:768px) {
+    #title_container h1 {
+        font-size: 2.5em;
+    }
+
+    #title_container h3 {
+        font-size: 1.5em;
+        text-align: center;
+    }
+
+    #main_home_content {
+        padding: 0;
+    }
+
+    #articles_container {
+        padding: 0;
+    }
+
+    #summary_container h2 {
+        text-align: center;
+        width: 100%;
+        margin: 20px 0px;
+    }
+
+    #summary_container p {
+        margin-left: 10px;
+    }
+
+    #presentation_container {
+        justify-content: center;
+    }
+
+    .presentation_p {
+        width: 100%;
+    }
+
+    #presentation_container h2 {
+        text-align: center;
+    }
+
+    #presentation_container p {
+        margin-left: 10px;
+    }
+
+    #new_article_container h2 {
+        text-align: center;
+        width: 100%;
+        margin-top: 65px;
+    }
+
+    .fa-chevron-circle-up {
+        left: 90vw;
+    }
+
+    footer {
+        padding: 20px 1%;
+        width: 98%;
+
+    }
+}
+
+@media screen and (max-width:768px) {
+    header h1 {
+        font-size: 1.3em;
+        width: 20px;
+    }
+
+    #title_container h1 {
+        text-align: center;
+    }
+
+    .fa-chevron-circle-up {
+        left: 88vw;
+    }
+
+    #new_article_container {
+        width: 100%;
+    }
+    footer{
+        align-items: baseline; 
+    }
+}
+
+/*//////////////////////////////////////////////////article PAGE///////////////////////////////////////////////////*/
+@media screen and (max-width:1024px) {
+    #article_page_container {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width:768px) {
+    #article_page_container {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:425px) {
+    #article_container {
+        padding: 30px 2%;
+    }
+
+    #article_container h1 {
+        margin-bottom: 60px;
+    }
+}
+
+/*//////////////////////////////////////////////////CREATE article///////////////////////////////////////////////////*/
+@media screen and (max-width:1024px) {
+    #create_article_page_container {
+        width: 95%;
+    }
+}
+
+/*//////////////////////////////////////////////////EDIT article///////////////////////////////////////////////////*/
+@media screen and (max-width:768px) {
+    #edit_article_page_container {
+        width: 95%;
+    }
+}
+
+/*//////////////////////////////////////////////////EDIT COMMENT///////////////////////////////////////////////////*/
+@media screen and (max-width:768px) {
+    #edit_page_container {
+        width: 95%;
+    }
+}
+
+/*//////////////////////////////////////////////////ADMIN PANEL///////////////////////////////////////////////////*/
+@media screen and (max-width:425px) {
+    #menu_admin .btn {
+        margin: 0 0.5%;
+        max-width: 30%;
+        padding: 1%;
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+/*//////////////////////////////////////////////////FORMS///////////////////////////////////////////////////*/
+@media screen and (max-width:1024px) {
+    #login_forms_container {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width:768px) {
+    #login_forms_container {
+        height: auto;
+    }
+
+    #log_forms {
+        flex-flow: row wrap;
+    }
+
+    #login_form_container,
+    #register_form_container {
+        width: 90%;
+        margin-bottom: 40px;
+    }
+
+    #register_form_container::before {
+        width: 30vw;
+        height: 2px;
+        left: 35vw;
+    }
+
+    #login_forms_container input {
+        width: 50%;
+    }
+
+    #login_forms_container h3 {
+        margin-top: 40px;
+    }
+}
+
