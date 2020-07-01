@@ -1,14 +1,15 @@
 {
-    "name": "p5/goodToKnow",
+    "name": "leny/good-to-know",
+    "description": "school personnal project",
     "authors": [
         {
-            "name": "Celia Gaudin Lenoir",
+            "name": "lenycherry",
             "email": "lenoircelia@hotmail.fr"
         }
     ],
     "autoload": {
         "psr-4": {
-            "content\\": "content/"
+            "content\\":"content/"
         }
     },
     "require": {}

@@ -14,9 +14,9 @@ class AdminPanel
         //on renvoi tous les articles et tous les commentaires à la vue
         $articleManager = new ArticleManager();
         $commentManager = new CommentManager();
-        $article = $articleManager->findAllArticle(); 
+        $articles = $articleManager->findAllArticle(); 
         $comments = $commentManager->findAllComment(); 
         $myView = new View('adminPanel');
-        $myView->render(array('article' => $article, 'comments' => $comments));
+        $myView->render(array('articles' => $articles, 'comments' => $comments));
     }
 }

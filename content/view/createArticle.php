@@ -1,7 +1,7 @@
 <?php $title = 'GTK - Créer un article' ?>
 <?php if (isset($_SESSION['admin']) && ($_SESSION['admin'] == 1)) : ?>
     <div id="create_article_page_container">
-        <form action="<?php echo HOST; ?>addArticle" method="post">
+        <form action=" <?php echo HOST; ?>addArticle"method="post">
             <label for='title'>Titre</label>
             <input id="title" type="text" placeholder="Insérer votre titre" name="values[title]" />
             <label for="textArea">Nouvel article</label>

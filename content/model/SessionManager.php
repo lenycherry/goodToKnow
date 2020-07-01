@@ -22,18 +22,21 @@ class SessionManager extends Manager
         }
         //hashage du mot de passe
         $mdp = password_hash($params['mdp'], PASSWORD_BCRYPT);
-
+        //attribution d'un token 
+        $token = bin2hex(random_bytes(15));
         // On insert nos données dans la table utilisateur
-        $req = $this->bdd->prepare("INSERT INTO users SET pseudo = :pseudo, mdp = :mdp, mail = :mail, admin = :admin ");
+
+        $req = $this->bdd->prepare("INSERT INTO GTK_users SET pseudo = :pseudo, mdp = :mdp, mail = :mail, admin = :admin, token = :token ");
         $req->bindValue(':pseudo', $pseudo, PDO::PARAM_STR);
         $req->bindValue(':mail', $mail, PDO::PARAM_STR);
         $req->bindValue(':mdp', $mdp, PDO::PARAM_STR);
         $req->bindValue(':admin', $admin, PDO::PARAM_INT);
+        $req->bindValue(':token', $token, PDO::PARAM_STR);
         $req->execute();
     }
     public function verifMail($mail)
     {
-        $req_mail = $this->bdd->prepare("SELECT mail FROM users WHERE mail = :mail");
+        $req_mail = $this->bdd->prepare("SELECT mail FROM GTK_users WHERE mail = :mail");
         $req_mail->bindValue(':mail', $mail, PDO::PARAM_STR);
         $req_mail->execute();
 
@@ -42,7 +45,7 @@ class SessionManager extends Manager
     }
     public function verifPseudo($pseudo)
     {
-        $req_pseudo = $this->bdd->prepare("SELECT pseudo FROM users WHERE pseudo = :pseudo");
+        $req_pseudo = $this->bdd->prepare("SELECT pseudo FROM GTK_users WHERE pseudo = :pseudo");
         $req_pseudo->bindValue(':pseudo', $pseudo, PDO::PARAM_STR);
         $req_pseudo->execute();
 
@@ -52,7 +55,7 @@ class SessionManager extends Manager
     public function verifLogin($pseudo)
     {
 
-        $user = $this->bdd->prepare("SELECT * FROM users WHERE (pseudo = :pseudo OR mail = :pseudo)");
+        $user = $this->bdd->prepare("SELECT * FROM GTK_users WHERE (pseudo = :pseudo OR mail = :pseudo)");
         $user->bindValue(':pseudo', $pseudo, PDO::PARAM_STR);
         $user->execute();
 

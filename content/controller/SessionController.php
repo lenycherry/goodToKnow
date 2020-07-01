@@ -71,7 +71,9 @@ class SessionController
             $manager->formRegister($params);
             $user = $manager->verifLogin($pseudo);
             session_start();
-            $this->initSession($user);
+            //$this->initSession($user);
+            $this->sendMail($user);
+            $_SESSION['flash']['success'] = 'Un e-mail vous a été envoyé. Veuillez confirmer votre inscription';
             $myView = new View();
             $myView->redirect('home');
         } else {
@@ -145,5 +147,28 @@ class SessionController
         $_SESSION['mail'] = $user->mail;
         $_SESSION['mdp'] = $user->mdp;
         $_SESSION['admin'] = $user->admin;
+        $_SESSION['token'] = $user->token;
     }
+    public function sendMail($user)
+    {
+        $mail_to = $user->mail; 
+        
+ 
+        //=====Création du header de l'e-mail.
+        $header = "From: no-reply@gmail.com\n";
+        $header .= "MIME-version: 1.0\n";
+        $header .= "Content-type: text/html; charset=utf-8\n";
+        $header .= "Content-Transfer-ncoding: 8bit";
+        //=======
+         
+        //=====Ajout du message au format HTML          
+        $contenu = 'Bonjour ' . $user->pseudo . ',
+    Veuillez confirmer votre compte http://localhost/celiagaudin.fr/goodToKnow/confirmation/id/' . $user->id . "/token/" . $user->token ;
+        mail($mail_to, 'Confirmation de votre compte', $contenu);   
+    }
+public function confirmationMail($params)
+{
+   
 }
+}
+

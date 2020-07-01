@@ -13,6 +13,8 @@ class Routeur
         'register'     => ['controller' => 'SessionController', 'method' => 'showUserRegister'],
         'userRegister' => ['controller' => 'SessionController', 'method' => 'userRegister'],
         'logout'       => ['controller' => 'SessionController', 'method' => 'logout'],
+        'confirmation' => ['controller' => 'SessionController', 'method' => 'confirmationMail'],
+        
 
         'createArticle' => ['controller' => 'ArticleController', 'method' => 'showCreateArticle'],
         'editArticle'   => ['controller' => 'ArticleController', 'method' => 'showEditArticle'],
@@ -36,6 +38,7 @@ class Routeur
     public function __construct($request)
     {
         $this->request = $request;
+        
     }
 
     //func getRoute = récupère la route
@@ -68,7 +71,7 @@ class Routeur
         $route = $this->getRoute();
         $params = $this->getParams();
         if (key_exists($route, $this->routes)) {
-            $controller = "blog\\controller\\" . $this->routes[$route]["controller"];
+            $controller = "content\\controller\\" . $this->routes[$route]["controller"];
             $method = $this->routes[$route]['method'];
             $currentController = new $controller(); // instancie le controller demandé
             $currentController->$method($params); // appelle la méthode concernée

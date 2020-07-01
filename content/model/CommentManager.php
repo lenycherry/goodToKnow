@@ -10,7 +10,7 @@ class CommentManager extends Manager
 {
     public function findComment($id)
     {
-        $req = $this->bdd->prepare("SELECT * , DATE_FORMAT(create_date, '%d/%m/%Y %Hh%imin%ss') AS create_date, DATE_FORMAT(edit_date, '%d/%m/%Y %Hh%imin%ss') AS edit_date FROM comments WHERE id = :id ");
+        $req = $this->bdd->prepare("SELECT * , DATE_FORMAT(create_date, '%d/%m/%Y %Hh%imin%ss') AS create_date, DATE_FORMAT(edit_date, '%d/%m/%Y %Hh%imin%ss') AS edit_date FROM GTK_comments WHERE id = :id ");
         //$req = $this->bdd->prepare("SELECT DATE_FORMAT(create_date, '%d/%m/%Y %Hh%imin%ss') AS create_date FROM comments WHERE id = :id ");
         $req->bindValue(':id', $id, PDO::PARAM_INT); // définition de la valeur de :id soit le param $id de la fonction en var int
         $req->execute();
@@ -29,14 +29,14 @@ class CommentManager extends Manager
     }
     public function findAllComment()
     {
-        $req = $this->bdd->prepare("SELECT *,DATE_FORMAT(create_date, '%d/%m/%Y à %Hh%i') AS create_date,DATE_FORMAT(edit_date, '%d/%m/%Y à %Hh%i') AS edit_date FROM comments ORDER BY id DESC");
+        $req = $this->bdd->prepare("SELECT *,DATE_FORMAT(create_date, '%d/%m/%Y à %Hh%i') AS create_date,DATE_FORMAT(edit_date, '%d/%m/%Y à %Hh%i') AS edit_date FROM GTK_comments ORDER BY id DESC");
         $req->execute();
         $comments = $req->fetchAll();
         return $comments;
     }
     public function findAllCommentPerArticle($id)
     {
-        $req = $this->bdd->prepare("SELECT *, DATE_FORMAT(create_date, '%d/%m/%Y à %Hh%i') AS create_date, DATE_FORMAT(edit_date, '%d/%m/%Y à %Hh%i') AS edit_date FROM comments WHERE article_id = :article_id ORDER BY id DESC");
+        $req = $this->bdd->prepare("SELECT *, DATE_FORMAT(create_date, '%d/%m/%Y à %Hh%i') AS create_date, DATE_FORMAT(edit_date, '%d/%m/%Y à %Hh%i') AS edit_date FROM GTK_comments WHERE article_id = :article_id ORDER BY id DESC");
         $req->bindValue(':article_id', $id, PDO::PARAM_STR);
         $req->execute();
         $comments = $req->fetchAll();
@@ -47,7 +47,7 @@ class CommentManager extends Manager
         $pseudo = $dataComment['pseudo'];
         $content = $dataComment['values']['content'];
         $ArticleId = $dataComment['id'];
-        $req = $this->bdd->prepare('INSERT INTO comments (pseudo, content, article_id) VALUES(:pseudo, :content, :article_id)');
+        $req = $this->bdd->prepare('INSERT INTO GTK_comments (pseudo, content, article_id) VALUES(:pseudo, :content, :article_id)');
         $req->bindValue(':pseudo', $pseudo, PDO::PARAM_STR);
         $req->bindValue(':content', $content, PDO::PARAM_STR);
         $req->bindValue(':article_id', $ArticleId, PDO::PARAM_INT);
@@ -57,14 +57,14 @@ class CommentManager extends Manager
     {
         $content = $dataComment['content'];
         $id = $dataComment['id'];
-        $req = $this->bdd->prepare('UPDATE comments SET  content = :content, edit_date = NOW() WHERE id = :id');
+        $req = $this->bdd->prepare('UPDATE GTK_comments SET  content = :content, edit_date = NOW() WHERE id = :id');
         $req->bindValue(':content', $content, PDO::PARAM_STR);
         $req->bindValue(':id', $id, PDO::PARAM_INT);
         $req->execute();
     }
     public function deleteComment($id)
     {
-        $req = $this->bdd->prepare('DELETE FROM comments WHERE id = :id');
+        $req = $this->bdd->prepare('DELETE FROM GTK_comments WHERE id = :id');
         $req->bindValue(':id', $id, PDO::PARAM_INT);
         $req->execute();
     }
@@ -72,7 +72,7 @@ class CommentManager extends Manager
     {
         $reported = 1;
         $id = $currentComment->getId();
-        $req = $this->bdd->prepare('UPDATE comments SET reported = :reported WHERE id = :id');
+        $req = $this->bdd->prepare('UPDATE GTK_comments SET reported = :reported WHERE id = :id');
         $req->bindValue(':id', $id, PDO::PARAM_INT);
         $req->bindValue(':reported', $reported, PDO::PARAM_INT);
         $req->execute();
@@ -82,7 +82,7 @@ class CommentManager extends Manager
         $acquit = 1;
         $reported = 0;
         $id = $currentComment->getId();
-        $req = $this->bdd->prepare('UPDATE comments SET acquit = :acquit, reported = :reported WHERE id = :id');
+        $req = $this->bdd->prepare('UPDATE GTK_comments SET acquit = :acquit, reported = :reported WHERE id = :id');
         $req->bindValue(':id', $id, PDO::PARAM_INT);
         $req->bindValue(':acquit', $acquit, PDO::PARAM_INT);
         $req->bindValue(':reported', $reported, PDO::PARAM_INT);
