@@ -61,18 +61,17 @@ class SessionController
         } elseif ($mdp != $confmdp) {
             $valid = false;
             $erForm["mdp"] = "La confirmation du mot de passe ne correspond pas.";
-        }
-        elseif (!preg_match("/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/", $mdp)){
+        } elseif (!preg_match("/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/", $mdp)) {
             $valid = false;
             $erForm["mdp"] = "Veuillez entrer un mot de passe valide. 8 caractères minimum, au moins une lettre, au moins un chiffre.";
         }
-        // Si toutes les conditions sont remplies alors on fait le traitement vers la bdd via la fonction du model "formRegister"
+        // Si toutes les conditions sont remplies alors on fait le traitement vers la bdd 
+        //On envoi un mail de confirmation
         if ($valid) {
             $manager->formRegister($params);
             $user = $manager->verifLogin($pseudo);
             session_start();
-            //$this->initSession($user);
-            $this->sendMail($user);
+            //$this->sendMail($user);// EN ATTENTE DE DEPLOIEMENT/////////////////////////////////////////////////////////////////////////////////////////////////////
             $_SESSION['flash']['success'] = 'Un e-mail vous a été envoyé. Veuillez confirmer votre inscription';
             $myView = new View();
             $myView->redirect('home');
@@ -151,24 +150,41 @@ class SessionController
     }
     public function sendMail($user)
     {
-        $mail_to = $user->mail; 
-        
- 
-        //=====Création du header de l'e-mail.
+        $mail_to = $user->mail;
+
+        //Création du header de l'e-mail.
         $header = "From: no-reply@gmail.com\n";
         $header .= "MIME-version: 1.0\n";
         $header .= "Content-type: text/html; charset=utf-8\n";
         $header .= "Content-Transfer-ncoding: 8bit";
-        //=======
-         
-        //=====Ajout du message au format HTML          
-        $contenu = 'Bonjour ' . $user->pseudo . ',
-    Veuillez confirmer votre compte http://localhost/celiagaudin.fr/goodToKnow/confirmation/id/' . $user->id . "/token/" . $user->token ;
-        mail($mail_to, 'Confirmation de votre compte', $contenu);   
-    }
-public function confirmationMail($params)
-{
-   
-}
-}
 
+        //Ajout du message au format HTML          
+        $contenu = 'Bonjour ' . $user->pseudo . ',
+    Veuillez confirmer votre compte http://localhost/celiagaudin.fr/goodToKnow/confirmation/id/' . $user->id . "\/token/" . $user->token;
+        (mail($mail_to, 'Confirmation de votre compte', $contenu, $header));
+    }
+    public function confirmationMail($params)
+    {
+        if (isset($params)) {
+            extract($params);
+            $id = trim($id);
+            $token = htmlentities(trim($token));
+            $manager = new SessionManager();
+            $verifToken = $manager->confirmationToken($id, $token);
+            session_start();
+            if ($verifToken == 0) {
+                //'token déjà confirmé';
+            } else if ($verifToken === 1) {
+                $user = $manager->findUser($id);
+                $this->initSession($user);
+                $_SESSION['flash']['success'] = 'Bienvenue ' . htmlspecialchars($user->pseudo);
+            } else if ($verifToken == 2) {
+                $_SESSION['flash']['fail'] = 'Le lien est erroné';
+            } else {
+                $_SESSION['flash']['fail'] = 'Une erreur est survenue';
+            }
+        }
+        $myView = new View();
+        $myView->redirect('home');
+    }
+}

@@ -62,4 +62,36 @@ class SessionManager extends Manager
         $user = $user->fetch(PDO::FETCH_OBJ);
         return $user;
     }
+    public function findUser($id)
+    {
+        $user = $this->bdd->prepare("SELECT * FROM GTK_users WHERE id = :id");
+        $user->bindValue(':id', $id, PDO::PARAM_INT);
+        $user->execute();
+
+        $user = $user->fetch(PDO::FETCH_OBJ);
+        return $user;
+    }
+    public function confirmationToken($id, $tokenUrl)
+    {
+        $req = $this->bdd->prepare("SELECT token FROM GTK_users WHERE id = :id");
+        $req->bindValue(':id', $id, PDO::PARAM_INT);
+        $req->execute();
+        $result = $req->fetch();
+        $token=$result[0];
+        //si token de l'url est null = 0
+        // si il correspond au token de la bdd = 1
+        //si il ne correspond pas au token de la bdd = 2
+        if ($token == null) {
+            $verifToken = 0;
+        } else if ($token == $tokenUrl) {
+            $req = $this->bdd->prepare("UPDATE GTK_users SET token = NULL, confirmation_token = NOW() WHERE id =  :id");
+            $req->bindValue(':id', $id, PDO::PARAM_INT);
+            $req->execute();
+            $verifToken = 1;
+
+        } else {
+            $verifToken = 2;
+        }
+        return $verifToken;
+    }
 }
