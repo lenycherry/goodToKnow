@@ -120,12 +120,18 @@ class SessionController
         }
         //On vérifie la concordance pseudo mdp 
         $user = $manager->verifLogin($pseudo);
-        if ($user && password_verify($mdp, $user->mdp)) { //si ils correspondent on récupère ses infos dans la session
-            $this->initSession($user);
-            $myView = new View();
-            $myView->redirect('home');
-        } else if (!empty($mdp) && !empty($pseudo)) {
-            $erForm["wrong_login"] = "Pseudo ou mot de passe incorrect.";
+        if ($user != FALSE) {
+            if ($user->token == NULL) {
+                if ($user && password_verify($mdp, $user->mdp)) { //si ils correspondent on récupère ses infos dans la session
+                    $this->initSession($user);
+                    $myView = new View();
+                    $myView->redirect('home');
+                } else if (!empty($mdp) && !empty($pseudo)) {
+                    $erForm["wrong_login"] = "Pseudo ou mot de passe incorrect.";
+                }
+            } else {
+                $erForm["error_token"] = "Veuillez confirmer votre inscription par le mail qui vous a été envoyé.";
+            }
         }
         $manager = new ArticleManager();
         $articles = $manager->findAllArticle();
@@ -173,15 +179,15 @@ class SessionController
             $verifToken = $manager->confirmationToken($id, $token);
             session_start();
             if ($verifToken == 0) {
-                //'token déjà confirmé';
+                $_SESSION['flash']['fail'] = 'Une erreur est survenue'; // soit l'adresse est déjà validé, soit l'iD de l 'url est faux
             } else if ($verifToken === 1) {
                 $user = $manager->findUser($id);
                 $this->initSession($user);
                 $_SESSION['flash']['success'] = 'Bienvenue ' . htmlspecialchars($user->pseudo);
             } else if ($verifToken == 2) {
-                $_SESSION['flash']['fail'] = 'Le lien est erroné';
+                $_SESSION['flash']['fail'] = 'Le lien est erroné'; // les tokens ne correspondent pas
             } else {
-                $_SESSION['flash']['fail'] = 'Une erreur est survenue';
+                $_SESSION['flash']['fail'] = 'Une erreur est survenue ';
             }
         }
         $myView = new View();

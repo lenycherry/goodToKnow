@@ -20,7 +20,7 @@ class CommentController
         $myView->render(array(
             'comments' => $comments,
             'currentComment' => $currentComment,
-            'Articles' => $articles
+            'articles' => $articles
         )); //execute render (mise en mémoire tampon du contenu désiré)
     }
     public function showEditComment($params)
@@ -40,7 +40,7 @@ class CommentController
         $myView->render(array(
             'comments' => $comments,
             'currentComment' => $currentComment,
-            'Articles' => $articles
+            'articles' => $articles
         ));
     }
     public function addComment($params)
@@ -58,7 +58,7 @@ class CommentController
             $_SESSION['flash']['success'] = 'Ce commentaire a bien été ajouté';
         }
         $myView = new View();
-        $currentArticle = 'Article/id/' . $id;
+        $currentArticle = 'article/id/' . $id;
         $myView->redirect($currentArticle);
     }
     public function updateComment($params)
@@ -82,7 +82,7 @@ class CommentController
         if (isset($admin)) {
             $myView->redirect('adminPanel');
         }
-        $currentArticle = 'Article/id/' . $articleId;
+        $currentArticle = 'article/id/' . $articleId;
         $myView->redirect($currentArticle);
     }
     public function deleteComment($params)
@@ -98,7 +98,7 @@ class CommentController
         if (isset($admin)) {
             $myView->redirect('adminPanel');
         }
-        $currentArticle = 'Article/id/' . $articleId;
+        $currentArticle = 'article/id/' . $articleId;
         $myView->redirect($currentArticle);
     }
     public function reportComment($params)
@@ -113,7 +113,7 @@ class CommentController
         $_SESSION['flash']['success'] = 'Ce commentaire a bien été signalé';
         $myView = new View();
         $articleId = $currentComment->getArticleId();
-        $currentArticle = 'Article/id/' . $articleId;
+        $currentArticle = 'article/id/' . $articleId;
         $myView->redirect($currentArticle);
     }
     public function acquitComment($params)

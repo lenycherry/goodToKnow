@@ -46,11 +46,11 @@ class CommentManager extends Manager
     {
         $pseudo = $dataComment['pseudo'];
         $content = $dataComment['values']['content'];
-        $ArticleId = $dataComment['id'];
+        $articleId = $dataComment['id'];
         $req = $this->bdd->prepare('INSERT INTO GTK_comments (pseudo, content, article_id) VALUES(:pseudo, :content, :article_id)');
         $req->bindValue(':pseudo', $pseudo, PDO::PARAM_STR);
         $req->bindValue(':content', $content, PDO::PARAM_STR);
-        $req->bindValue(':article_id', $ArticleId, PDO::PARAM_INT);
+        $req->bindValue(':article_id', $articleId, PDO::PARAM_INT);
         $req->execute();
     }
     public function updateComment($dataComment)
