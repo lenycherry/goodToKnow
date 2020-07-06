@@ -129,4 +129,16 @@ class CommentController
         $myView = new View();
         $myView->redirect('adminPanel');
     }
+    //transformation des données des commentaires en Json et regroupés dans un tableau $dataJson.
+    // Va permettre de récupérer tous les commentaires via requête ajax (CommentDisplay.js).
+    public function findJsonComment($params)
+    {
+        extract($params);
+        $manager = new CommentManager();
+        $data = $manager->findAllJson($id);
+        $dataJson = json_encode($data);
+        header("Content-type: application/json; charset=utf-8");
+        echo $dataJson;
+    }
+
 }

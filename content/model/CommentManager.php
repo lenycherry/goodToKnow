@@ -88,4 +88,11 @@ class CommentManager extends Manager
         $req->bindValue(':reported', $reported, PDO::PARAM_INT);
         $req->execute();
     }
+    public function findAllJson($id)
+    {
+        $req = $this->bdd->prepare('SELECT * FROM GTK_comments WHERE article_id = :article_id ORDER BY id DESC'); 
+        $req->bindValue(':article_id', $id, PDO::PARAM_INT);
+        $req->execute();
+        return $req->fetchAll(PDO::FETCH_ASSOC);
+    }
 }

@@ -5,6 +5,9 @@
         <div><?php echo $currentArticle->getContent(); ?></div>
         <p class="date">Crée le <?php echo $currentArticle->getCreateDate(); ?></p>
     </div>
+
+    <div id="comments_container_json"></div>
+
     <div id="comments_container">
         <?php if (isset($_SESSION['id'])) : ?>
             <form id="form_add_comment_container" action="<?php echo HOST; ?>addComment/id/<?php echo $currentArticle->getId() ?>" method="post">
@@ -13,7 +16,7 @@
                 <button class='btn' type="submit" value="Valider">Valider</button>
             </form>
         <?php endif; ?>
-        <?php if (isset($comments)) : ?>
+       <?php if (isset($comments)) : ?>
             <?php foreach ($comments as $comment) : ?>
                 <div class="article_comment_container">
                     <h3><?php echo htmlspecialchars($comment['pseudo']) ?></h3>
@@ -33,10 +36,13 @@
                                 <a href="<?php echo HOST; ?>reportComment/id/<?php echo $comment['id'] ?>" class="jf_alert report_com_btn btn">Signaler</a>
                             <?php endif; ?>
                         <?php endif; ?>
-                    </span>
+                    </span> 
                 </div>
             <?php endforeach; ?>
         <?php endif; ?>
     </div>
 </div>
+<div id="report_url" hidden><?php echo HOST; ?>reportComment/id/</div>
+<div id="json_url" hidden><?php echo HOST; ?>jsonComment/id/<?php echo $currentArticle->getId() ?></div>
 <script src="<?php echo ASSETS; ?>js/Alert.js"></script>
+<script src="<?php echo ASSETS; ?>js/CommentDisplay.js"></script>
