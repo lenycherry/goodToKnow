@@ -87,13 +87,19 @@ class CommentController
     }
     public function deleteComment($params)
     {
+        session_start();
         extract($params);
         $manager = new CommentManager();
         $currentComment = $manager->findComment($id);
         $articleId = $currentComment->getArticleId();
+        $userPseudo = $_SESSION['pseudo'];
+        $authPseudo = $manager->verifUser($id);
+        if($userPseudo == $authPseudo['pseudo']){
         $manager->deleteComment($id);
-        session_start();
         $_SESSION['flash']['success'] = 'Ce commentaire a bien été supprimé';
+        }else{
+            $_SESSION['flash']['fail'] = 'Vous ne pouvez pas effacer ce commentaire';
+        }
         $myView = new View();
         if (isset($admin)) {
             $myView->redirect('adminPanel');

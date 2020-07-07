@@ -62,6 +62,14 @@ class CommentManager extends Manager
         $req->bindValue(':id', $id, PDO::PARAM_INT);
         $req->execute();
     }
+    public function verifUser($id)
+    {
+        $req = $this->bdd->prepare('SELECT pseudo FROM GTK_comments WHERE id = :id');
+        $req->bindValue(':id', $id, PDO::PARAM_INT);
+        $req->execute();
+        $authPseudo = $req->fetch();
+        return $authPseudo;
+    }
     public function deleteComment($id)
     {
         $req = $this->bdd->prepare('DELETE FROM GTK_comments WHERE id = :id');
@@ -90,7 +98,7 @@ class CommentManager extends Manager
     }
     public function findAllJson($id)
     {
-        $req = $this->bdd->prepare('SELECT * FROM GTK_comments WHERE article_id = :article_id ORDER BY id DESC'); 
+        $req = $this->bdd->prepare("SELECT *, DATE_FORMAT(create_date, '%d/%m/%Y à %Hh%i') AS create_date, DATE_FORMAT(edit_date, '%d/%m/%Y à %Hh%i') AS edit_date FROM GTK_comments WHERE article_id = :article_id ORDER BY id DESC"); 
         $req->bindValue(':article_id', $id, PDO::PARAM_INT);
         $req->execute();
         return $req->fetchAll(PDO::FETCH_ASSOC);
