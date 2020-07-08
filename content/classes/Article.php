@@ -7,6 +7,7 @@ class Article
     private $id;
     private $title;
     private $content;
+    private $imageUrl;
     private $create_date;
     private $edit_date;
 
@@ -33,6 +34,14 @@ class Article
     public function setContent($content)
     {
         $this->content = $content;
+    }
+    public function getImageUrl()
+    {
+        return $this->imageUrl;
+    }
+    public function setImageUrl($imageUrl)
+    {
+        $this->imageUrl= $imageUrl;
     }
     public function getCreateDate()
     {

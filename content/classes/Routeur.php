@@ -20,7 +20,7 @@ class Routeur
         'editArticle'   => ['controller' => 'ArticleController', 'method' => 'showEditArticle'],
         'updateArticle' => ['controller' => 'ArticleController', 'method' => 'updateArticle'],
         'addArticle'    => ['controller' => 'ArticleController', 'method' => 'addArticle'],
-        'deleteArticle' => ['controller' => 'ArticleController', 'method' => 'deleteArticle'],
+        'deleteArticle' => ['controller' => 'ArticleController', 'method' => 'deleteArticle'],        
 
         'createComment' => ['controller' => 'CommentController', 'method' => 'showCreateComment'],
         'editComment'   => ['controller' => 'CommentController', 'method' => 'showEditComment'],

@@ -14,6 +14,7 @@ define('ROOT', $root.'/celiagaudin.fr/goodToKnow/');
 define('CONTROLLER', ROOT.'content/controller/');
 define('VIEW', ROOT.'content/view/');
 define('MODEL', ROOT.'content/model/');
+define('UPLOAD', ROOT.'content/upload/');
 define('ASSETS', HOST.'content/assets/');
     }
 }

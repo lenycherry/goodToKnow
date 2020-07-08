@@ -3,12 +3,12 @@
     <div id="admin_main_container">
         <h1 id="home_admin_title"> Bienvenue sur l'espace d'administration <?php echo htmlspecialchars($_SESSION['pseudo']); ?></h1>
         <div id="menu_admin">
-            <div id="admin_articles_btn" class="btn">Gérer les Chapitres</div>
+            <div id="admin_articles_btn" class="btn">Gérer les Articles</div>
             <div id="admin_comments_btn" class="btn">Gérer les commentaires</div>
             <div id="admin_reported_btn" class="btn">Gérer les commentaires signalés</div>
         </div>
         <div id='admin_article' class="invisible">
-            <a href="createArticle" class="create_article_btn btn">Créer un nouveau chapitre</a>
+            <a href="createArticle" class="create_article_btn btn">Créer un nouvel article</a>
             <div id="list_articles_container" class="list_content_admin">
                 <?php foreach ($articles as $article) : ?>
                     <div class="admin_content_container">

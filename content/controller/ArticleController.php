@@ -47,13 +47,47 @@ class ArticleController
         extract($params);
         $contentArticle = trim($values['content']);
         $titleArticle = trim($values['title']);
+        session_start();
         if (empty($contentArticle) || empty($titleArticle)) {
-            session_start();
+            
             $_SESSION['flash']['fail'] = 'Un champ vide ne peut être créé';
         } else {
+            if(isset($_FILES['uploaded_file']['name']) && $_FILES['uploaded_file']['name'] != NULL){   
+                $maxSize = 5000000;
+                $validExt = array('.jpg','.gif','.png','.jpeg');
+                if($_FILES['uploaded_file']['error'] > 0){
+                  $_SESSION['flash']['fail'] = 'Une erreur est survenue lors du transfert';
+                  $myView = new View();
+                  $myView->redirect('adminPanel');
+                }
+                $fileSize = $_FILES['uploaded_file']['size'];
+                if($fileSize > $maxSize){
+                  $_SESSION['flash']['fail'] = 'Le fichier est trop volumineux';
+                  $myView = new View();
+                  $myView->redirect('adminPanel');
+                }
+                $fileName = $_FILES['uploaded_file']['name'];
+                $fileExt = ".". strtolower(substr(strrchr($fileName, "."), 1));
+                if(!in_array($fileExt,$validExt)){
+                  $_SESSION['flash']['fail'] = 'Le fichier n\'est pas une image';
+                  $myView = new View();
+                  $myView->redirect('adminPanel');
+                }
+                $tmpName = $_FILES['uploaded_file']['tmp_name'];
+                $uniqueName = md5(uniqid(rand(), true));
+                $fileName = UPLOAD . $uniqueName . $fileExt;
+                $fileNameUrl = HOST . 'content/upload/' . $uniqueName . $fileExt;
+                $resultat = move_uploaded_file($tmpName,$fileName);
+                if($resultat){
+                  $_SESSION['flash']['success'] = 'Transfert réussi';
+                }
+            }else{
+                $_SESSION['flash']['fail'] = 'Veuillez ajouter une image';
+                $myView = new View();
+                $myView->redirect('adminPanel');
+            }
             $manager = new ArticleManager();
-            $manager->addArticle($values);
-            session_start();
+            $manager->addArticle($values, $fileNameUrl);
             $_SESSION['flash']['success'] = 'Cet article a bien été ajouté';
         }
         $myView = new View();

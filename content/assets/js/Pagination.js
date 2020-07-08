@@ -1,53 +1,67 @@
 class Pagination {
     constructor() {
-        this.commentList = ['test1', 'test2', 'test3', 'test4', 'test5', 'test6', 'test7']//document.getElementsByClassName('comment_list');
-        this.numberOfItems = 5;
+        this.firstPageBtn = document.querySelector('.first_page_btn')
+        this.previousPageBtn = document.querySelector('.previous_page_btn')
+        this.nextPageBtn = document.querySelector('.next_page_btn')
+        this.lastPageBtn = document.querySelector('.last_page_btn')
+        this.articles = document.getElementsByClassName('article_content_container')
+        this.numberOfItems = 4;
         this.first = 0;
         this.actualPage = 1;
-        this.maxPages = Math.ceil(this.commentList.length / this.numberOfItems);
+        this.maxPages = Math.ceil(this.articles.length / this.numberOfItems);
 
-        showList();
+        this.showList();
+        this.firstPageBtn.addEventListener('click',e=>{
+            this.firstPage()
+        })
+        this.previousPageBtn.addEventListener('click',e=>{
+            this.previousPage()
+        })
+        this.nextPageBtn.addEventListener('click',e=>{
+            this.nextPage()
+        })
+        this.lastPageBtn.addEventListener('click',e=>{
+            this.lastPage()
+        })
     }
 
-     firstPage() {
+    firstPage() {
         this.first = 0;
         this.actualPage = 1;
-        showList();
+        this.showList();
     }
 
     nextPage() {
-        if (this.first + numberOfItems <= this.commentList.length) {
-            this.first += numberOfItems;
+        if (this.first + this.numberOfItems <= this.articles.length) {
+            this.first += this.numberOfItems;
             this.actualPage++;
-            showList();
+            this.showList();
         }
     }
-    previous() {
-        if (this.first - numberOfItems >= 0) {
-            this.first -= numberOfItems;
+    previousPage() {
+        if (this.first - this.numberOfItems >= 0) {
+            this.first -= this.numberOfItems;
             this.actualPage--;
-            showList();
+            this.showList();
         }
     }
     lastPage() {
-        this.first = (this.maxPages * numberOfItems) - numberOfItems;
+        this.first = (this.maxPages * this.numberOfItems) - this.numberOfItems;
         this.actualPage = this.maxPages;
-        showList();
+        this.showList();
     }
     showList() {
-        let tableList = "";
-        for (let i = this.first; i < this.first + numberOfItems; i++) {
-            console.log(i);
-            if (i < this.commentList.length) {
-                tableList += `
-        <tr>
-          <td>${this.commentList[i]}</td>
-        </tr>
-      `
+        for(let i = 0; i< this.articles.length;i++){
+            this.articles[i].classList.replace('visible','invisible')
+        }
+        for (let i = this.first; i < this.first + this.numberOfItems; i++) {
+
+            if (i < this.articles.length) {
+                this.articles[i].classList.replace('invisible','visible')
             }
         }
-        document.getElementById('articles_home_container').innerHTML = tableList;
-        showPageInfo();
+
+        this.showPageInfo();
     }
     showPageInfo() {
         document.getElementById('pageInfo').innerHTML = `
@@ -56,4 +70,4 @@ class Pagination {
     }
 }
 
-let commentPagination = new Pagination()
+let articlePagination = new Pagination()

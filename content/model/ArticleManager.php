@@ -26,17 +26,19 @@ class ArticleManager extends Manager //gère la connection à la bdd par son par
         $currentArticle->setId($result['id']);
         $currentArticle->setTitle($result['title']);
         $currentArticle->setContent($result['content']);
+        $currentArticle->setImageUrl($result['imageUrl']);
         $currentArticle->setCreateDate($result['create_date']);
         $currentArticle->setEditDate($result['edit_date']);
         return $currentArticle;
     }
-    public function addArticle($dataArticle)
+    public function addArticle($dataArticle, $imageUrl)
     {
         $title = $dataArticle['title'];
         $content = $dataArticle['content'];
-        $req = $this->bdd->prepare('INSERT INTO GTK_articles (title, content) VALUES(:title, :content)');
+        $req = $this->bdd->prepare('INSERT INTO GTK_articles (title, content, imageUrl) VALUES(:title, :content, :imageUrl)');
         $req->bindValue(':title', $title, PDO::PARAM_STR);
         $req->bindValue(':content', $content, PDO::PARAM_STR);
+        $req->bindValue(':imageUrl', $imageUrl, PDO::PARAM_STR);
         $req->execute();
     }
     public function updateArticle($dataArticle)
