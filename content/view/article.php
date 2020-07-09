@@ -16,8 +16,11 @@
     </div>
     <div id="comments_container_json"></div>
 </div>
+
 <div id="url_host" hidden><?php echo HOST; ?></div>
 <div id="json_url" hidden><?php echo HOST; ?>jsonComment/id/<?php echo $currentArticle->getId() ?></div>
-<div id="json_pseudo" hidden><?php if (isset($_SESSION['id'])){echo $_SESSION["pseudo"];}; ?></div>
+<div id="json_pseudo" hidden><?php if (isset($_SESSION['id'])) {
+                                    echo $_SESSION["pseudo"];
+                                }; ?></div>
 <script src="<?php echo ASSETS; ?>js/Alert.js"></script>
 <script src="<?php echo ASSETS; ?>js/CommentDisplay.js"></script>

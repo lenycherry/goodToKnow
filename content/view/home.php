@@ -8,7 +8,7 @@
   <div id="new_article_container" class="reveal">
     <?php $lastArticle = end($articles); ?>
 
-    <img class="img_last_article" src="<?php echo $lastArticle['imageUrl']; ?>" />
+    <img alt="<?php echo $lastArticle['title']; ?>" class="img_last_article" src="<?php echo $lastArticle['imageUrl']; ?>" />
 
     <article class="new_article_content">
     <h2><a href="<?php echo HOST; ?>article/id/<?php echo $lastArticle['id'] ?>">Dernier article publié</a></h2>
@@ -20,10 +20,12 @@
 
   <div id="home_articles" class="reveal">
   <div class="list_content_articles">
-    <?php foreach ($articles as $article) : ?>
+    <?php foreach ($articles as $article) : ?><a href="<?php echo HOST; ?>article/id/<?php echo $article['id'] ?>">
       <article class="article_content_container invisible">
+      <img alt="<?php echo $article['title']; ?>" class="img_resume_article" src="<?php echo $article['imageUrl']; ?>" />
         <h3><?php echo $article['title']; ?></h3>
     </article>
+    </a>
     <?php endforeach; ?>
     </div>
     <div>

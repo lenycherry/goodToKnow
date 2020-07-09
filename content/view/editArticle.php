@@ -2,17 +2,25 @@
 <?php if (isset($_SESSION['admin']) && ($_SESSION['admin'] == 1)) : ?>
     <div id="edit_article_page_container">
         <h1>Edition de chapitre</h1>
-        <form action="<?php echo HOST; ?>updateArticle/id/" method="post">
+        <form action="<?php echo HOST; ?>updateArticle/id/" method="post" enctype="multipart/form-data">
             <label for='title'>Titre</label>
             <input id="title" type="text" value="<?php echo $currentArticle->getTitle(); ?>" name="values[title]" />
+            <label for='image'>Image</label>
+            <p class='form_p'>5Mo max. Fichier au format .jpg, .jpeg, .png, .gif.</p>
+            <input id="image" type="file" name="uploaded_file" />
+            <img src="<?php echo $currentArticle->getImageUrl(); ?>">
+
+
             <label for="textArea">Editer le chapitre</label>
             <textarea id='textArea' name='values[content]'>
    <?php echo $currentArticle->getContent(); ?>
   </textarea>
             <input type='hidden' name="values[id]" value="<?php echo $currentArticle->getId(); ?>" />
+            <input type='hidden' name="values[imgUrl]" value="<?php echo $currentArticle->getImageUrl(); ?>" />
             <button class="valid_btn btn" type="submit" value="Valider">Editer</button>
         </form>
     </div>
+
     <script>
         tinymce.init({
             selector: 'textarea#textArea',

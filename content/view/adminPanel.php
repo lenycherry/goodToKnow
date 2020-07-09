@@ -7,12 +7,13 @@
             <div id="admin_comments_btn" class="btn">Gérer les commentaires</div>
             <div id="admin_reported_btn" class="btn">Gérer les commentaires signalés</div>
         </div>
-        <div id='admin_article' class="invisible">
+        <div id='admin_article' class="menu_visible">
             <a href="createArticle" class="create_article_btn btn">Créer un nouvel article</a>
             <div id="list_articles_container" class="list_content_admin">
                 <?php foreach ($articles as $article) : ?>
-                    <div class="admin_content_container">
+                    <article class="article_content_container invisible">
                         <h3><?php echo $article['title']; ?></h3>
+                        <img alt="<?php echo $article['title']; ?>" class="img_resume_article" src="<?php echo $article['imageUrl']; ?>" />
                         <div class="resume">
                             <p><?php echo $article['content']; ?></p>
                         </div>
@@ -26,11 +27,17 @@
                         <span class="bloc_btn"><a href="<?php echo HOST; ?>editArticle/id/<?php echo $article['id']; ?>" class="edit_com_btn btn">Editer</a>
                             <a href="<?php echo HOST; ?>deleteArticle/id/<?php echo $article['id']; ?>" class="jf_alert erase_com_btn btn">Effacer</a>
                         </span>
-                    </div>
+                    </article>
                 <?php endforeach; ?>
             </div>
+            <div class="pagination_buttons">
+                <button class="first_page_btn btn">|<</button> <button class="previous_page_btn btn">
+                        <</button> <span id="pageInfo"></span>
+                            <button class="next_page_btn btn">></button>
+                            <button class="last_page_btn btn">>|</button>
+            </div>
         </div>
-        <div id="admin_comment" class="invisible">
+        <div id="admin_comment" class="menu_invisible">
             <?php $totalComments = 0; ?>
             <?php foreach ($comments as $comment) : ?>
                 <?php $totalComments++ ?>
@@ -85,7 +92,7 @@
                     <?php endforeach; ?>
             </div>
         </div>
-        <div id="admin_comment_reported" class="invisible">
+        <div id="admin_comment_reported" class="menu_invisible">
             <h2>Commentaires signalés</h2>
             <?php if (isset($comments)) : ?>
                 <div id="report_comments_container" class="list_content_admin">
@@ -118,4 +125,5 @@
     </div>
     <script src="<?php echo ASSETS; ?>js/Alert.js"></script>
     <script src="<?php echo ASSETS; ?>js/MenuAdmin.js"></script>
+    <script src="<?php echo ASSETS; ?>js/Pagination.js"></script>
     <script src="<?php echo ASSETS; ?>js/CommentAdmin.js"></script>

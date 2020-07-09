@@ -29,14 +29,14 @@ class CommentManager extends Manager
     }
     public function findAllComment()
     {
-        $req = $this->bdd->prepare("SELECT *,DATE_FORMAT(create_date, '%d/%m/%Y à %Hh%i') AS create_date,DATE_FORMAT(edit_date, '%d/%m/%Y à %Hh%i') AS edit_date FROM GTK_comments ORDER BY id DESC");
+        $req = $this->bdd->prepare("SELECT *,DATE_FORMAT(create_date, 'Le %d/%m/%Y à %Hh%i') AS create_date,DATE_FORMAT(edit_date, 'Le %d/%m/%Y à %Hh%i') AS edit_date FROM GTK_comments ORDER BY id DESC");
         $req->execute();
         $comments = $req->fetchAll();
         return $comments;
     }
     public function findAllCommentPerArticle($id)
     {
-        $req = $this->bdd->prepare("SELECT *, DATE_FORMAT(create_date, '%d/%m/%Y à %Hh%i') AS create_date, DATE_FORMAT(edit_date, '%d/%m/%Y à %Hh%i') AS edit_date FROM GTK_comments WHERE article_id = :article_id ORDER BY id DESC");
+        $req = $this->bdd->prepare("SELECT *, DATE_FORMAT(create_date, 'Le %d/%m/%Y à %Hh%i') AS create_date, DATE_FORMAT(edit_date, 'Le %d/%m/%Y à %Hh%i') AS edit_date FROM GTK_comments WHERE article_id = :article_id ORDER BY id DESC");
         $req->bindValue(':article_id', $id, PDO::PARAM_STR);
         $req->execute();
         $comments = $req->fetchAll();
@@ -98,7 +98,7 @@ class CommentManager extends Manager
     }
     public function findAllJson($id)
     {
-        $req = $this->bdd->prepare("SELECT *, DATE_FORMAT(create_date, '%d/%m/%Y à %Hh%i') AS create_date, DATE_FORMAT(edit_date, '%d/%m/%Y à %Hh%i') AS edit_date FROM GTK_comments WHERE article_id = :article_id ORDER BY id DESC"); 
+        $req = $this->bdd->prepare("SELECT *, DATE_FORMAT(create_date, 'Crée le %d/%m/%Y à %Hh%i') AS create_date, DATE_FORMAT(edit_date, 'Edité le %d/%m/%Y à %Hh%i') AS edit_date FROM GTK_comments WHERE article_id = :article_id ORDER BY id DESC"); 
         $req->bindValue(':article_id', $id, PDO::PARAM_INT);
         $req->execute();
         return $req->fetchAll(PDO::FETCH_ASSOC);

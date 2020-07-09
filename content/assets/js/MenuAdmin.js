@@ -30,14 +30,14 @@ class MenuAdmin {
         this.openContainer(container)
     }
     openContainer(container) {
-        if (container.classList.contains('invisible')) {
-            container.classList.replace('invisible', 'visible')
+        if (container.classList.contains('menu_invisible')) {
+            container.classList.replace('menu_invisible', 'menu_visible')
         }
     }
     closeAll() {
-        let containers = document.getElementsByClassName('visible')
+        let containers = document.getElementsByClassName('menu_visible')
         for (let i = 0; i < containers.length; i++) {
-            containers[i].classList.replace('visible', 'invisible')
+            containers[i].classList.replace('menu_visible', 'menu_invisible')
         }
     }
 }

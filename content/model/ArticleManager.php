@@ -41,15 +41,17 @@ class ArticleManager extends Manager //gère la connection à la bdd par son par
         $req->bindValue(':imageUrl', $imageUrl, PDO::PARAM_STR);
         $req->execute();
     }
-    public function updateArticle($dataArticle)
+    public function updateArticle($dataArticle,$imageUrl)
     {
+        //var_dump($imageUrl);exit;
         $title = $dataArticle['title'];
         $content = $dataArticle['content'];
         $id = $dataArticle['id'];
-        $req = $this->bdd->prepare('UPDATE GTK_articles SET title = :title, content = :content, edit_date = NOW() WHERE id = :id');
+        $req = $this->bdd->prepare('UPDATE GTK_articles SET title = :title, content = :content, imageUrl = :imageUrl, edit_date = NOW() WHERE id = :id');
         $req->bindValue(':title', $title, PDO::PARAM_STR);
         $req->bindValue(':content', $content, PDO::PARAM_STR);
         $req->bindValue(':id', $id, PDO::PARAM_INT);
+        $req->bindValue(':imageUrl', $imageUrl, PDO::PARAM_STR);
         $req->execute();
     }
     public function deleteArticle($id)
