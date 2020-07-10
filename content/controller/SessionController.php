@@ -29,8 +29,12 @@ class SessionController
             if (empty($pseudo)) {
                 $valid = false;
                 $erForm["pseudo"] = "Veuillez rentrer votre pseudo.";
-                //Vérif que le pseudo existe déja
+                // Regex pseudo
+            } elseif (!preg_match("/^[a-zA-Z0-9*(é|è|à|ù)]+(([',. -][a-zA-Z0-9 ])?[a-zA-Z0-9*(é|è|à|ù)]*)*$/", $pseudo)) {
+                $valid = false;
+                $erForm["pseudo"] = "Le pseudo n'est pas valide.";
             } else {
+                //Vérif que le pseudo existe déja
                 $req_pseudo = $manager->verifPseudo($pseudo);
                 if ($req_pseudo['pseudo'] <> "") {
                     $valid = false;
