@@ -389,6 +389,10 @@ margin-bottom: 10px;
 #form_add_comment_container label {
     color: rgb(106, 138, 159);
 }
+#comments_container_json{
+    max-height: 100vh;
+    overflow: scroll;
+}  
 
 /*/////////////////////////////////////////////////////////////////////////////TINYMCE///////////////////////*/
 .tox-tinymce {
