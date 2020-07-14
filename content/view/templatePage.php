@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -16,29 +15,41 @@
 </head>
 
 <body>
-    <header>
-        <h1><a href="<?php echo HOST; ?>home">GOOD to know</a></h1>
-        <nav id="main_navbar">
+    <aside id="main_template_container">
+        <header>
+            <h1><a href="<?php echo HOST; ?>home">GOOD to know</a></h1>
+            <h4>Le petit journal scientifique de notre planète.</h4>
+        </header>
+        <nav id="main_navbar" class="reveal">
+            <ul>
+                <li><a href="<?php echo HOST; ?>home"><i class="fas fa-home fa-2x"></i>Accueil</a></li>
+                <li><a href="<?php echo HOST; ?>"><i class="far fa-newspaper fa-2x"></i>Articles</a></li>
                 <?php if (isset($_SESSION['admin'])) : ?>
                     <?php if ($_SESSION['admin'] == 1) : ?>
-                        <li class="admin_button" title="Panneau d'administration"><a href="<?php echo HOST; ?>adminPanel"><i class="fas fa-edit fa-2x"></i></a></li>
+
+                        <li class="admin_button" title="Panneau d'administration"><a href="<?php echo HOST; ?>adminPanel"><i class="fas fa-edit fa-2x"></i>Espace Admin</a></li>
                     <?php endif; ?>
                 <?php endif; ?>
-
                 <?php
                 if (isset($_SESSION['id'])) {
                 ?>
-                    <li class="logout_button" title="Déconnexion"><a href="<?php echo HOST; ?>logout"><i class="fas fa-power-off fa-2x"></i></i></a></li>
+                    <li class="logout_button" title="Déconnexion"><a href="<?php echo HOST; ?>logout"><i class="fas fa-power-off fa-2x"></i>Se déconnecter </a></li>
                 <?php
                 } else {
                 ?>
-                    <li class="login_button" title="Se connecter"><a href="<?php echo HOST; ?>login"><i class="fas fa-user-circle fa-2x"></i></a></li>
+
+                    <li class="login_button" title="Se connecter"><a href="<?php echo HOST; ?>login"><i class="fas fa-user-circle fa-2x"></i>Se connecter</a></li>
                 <?php
                 }
                 ?>
             </ul>
         </nav>
-    </header>
+
+        <footer>
+            <p>Blog Fictif PHP créé par Célia Gaudin dans le cadre d'un projet d'étude OpenClassrooms.</p>
+            <p>Crédits photos : XXX - AAA - ZZZ</p>
+        </footer>
+    </aside>
     <div class="notif">
         <?php if (isset($_SESSION['flash'])) : ?>
             <?php foreach ($_SESSION['flash'] as $type => $message) : ?>
@@ -49,11 +60,12 @@
             <?php unset($_SESSION['flash']); ?>
         <?php endif; ?>
     </div>
-    <main><?php echo $content; ?></main>
+    <main>
+        <div class="fake_aside"></div>
+        <div class="main_bloc"><?php echo $content; ?></div>
+    </main>
     <a class='back_to_up_btn' href="#"><i class="fas fa-chevron-circle-up fa-2x"></i></a>
-    <footer>
-        <p>Blog Fictif PHP créé par Célia Gaudin dans le cadre d'un projet d'étude OpenClassrooms</p>
-    </footer>
+
 </body>
 
 </html>

@@ -1,7 +1,7 @@
 <?php $title = 'GTK ACCUEIL'; ?>
 <div id="title_container" class="reveal">
-  <h1>TITRE</h1>
-  <h3>Sous-titre</h3>
+  <h1 class="reveal">GOOD TO KNOW</h1>
+  <h3 class="reveal">Apprendre pour mieux comprendre notre environnement.</h3>
 </div>
 <div id='main_home_content'>
 

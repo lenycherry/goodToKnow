@@ -152,71 +152,103 @@ p {
     line-height: 1.4;
 }
 
+/*//////////////////////////////////////////////////////////////////////////////////////////////////ASIDE//////////////////*/
+#main_template_container{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: 100vh;
+    justify-content: space-between;
+    transition: all ease 0.3s;
+    background-color:white
+}
+#main_template_container:hover{
+    background-color: rgb(68, 74, 80);
+}
 /*//////////////////////////////////////////////////////////////////////////////////////////////////HEADER//////////////////*/
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(27, 33, 39, 0.5);
-    transition: all ease 0.5s;
-}
-
-header:hover {
-    background-color: rgb(27, 33, 39);
+    flex-direction: column;
+    width: 100%;
 }
 
 header h1 {
     margin-left: 10px;
+    font-size: xx-large;
 }
 
 header h1:hover a {
-    color: rgb(183, 201, 214);
+    color: white;
 }
 
 header h1 a {
     text-decoration: none;
-    color: rgba(106, 138, 159, 1.0);
+    color: rgb(106, 159, 152);
+}
+header h4 {
+    color: rgb(183, 201, 214);
+
 }
 
 #main_navbar {
     position: relative;
-    width: 50%;
     display: flex;
-    justify-content: flex-end;
+    flex-flow: row wrap;
+    width: 40%;
+    margin: auto;
+
 }
 
 #main_navbar ul {
+    flex-flow: row wrap;
     display: flex;
     justify-content: space-between;
+
 }
 
 #main_navbar li {
     list-style: none;
     position: relative;
-    padding: 20px 20px;
+    padding: 5px 20px;
+    width: 100%;
 }
 
 #main_navbar li i {
     text-decoration: none;
-    color: rgba(106, 138, 159, 1.0);
+    color: rgb(106, 159, 152);
     transition: all ease 0.2s;
+    margin: 0px 20px 0px 10px
 }
 
 #main_navbar li:hover i {
-    color: rgb(183, 201, 214);
+    color: rgb(106, 159, 152);
     transform: scale(1.1);
 }
+#main_navbar li a {
+    color: rgb(183, 201, 214);
+}
+#main_navbar li:hover a {
+    color: rgb(106, 159, 152);
+  
+}
+
 
 /*///////////////////////////////////////////////////////////////////////////////////////////MAIN//////////////////*/
 main {
     display: flex;
-    align-items: center;
     min-height: 85vh;
-    position: relative;
-    flex-flow: row wrap;
-    justify-content: center;
 }
 
+main .fake_aside{
+    height: 100vh;
+    width: 30%;
+}
+ main .main_bloc{
+    width: 70%;
+ }
 /*///////////////////////////////////////////////////////////////////////////////////////////FOOTER//////////////////*/
 .back_to_up_btn {
     color: rgba(106, 138, 159, 0.5);
@@ -240,15 +272,17 @@ footer {
     bottom: 0;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    text-align: center;
     background-color: rgba(27, 33, 39, 0.6);
     width: 100%;
     padding: 20px 0px;
+    height: 10vh;
 }
 
 footer p {
-    color: rgb(106, 138, 159);
+    color:white;
+    font-family: 'Oswald', sans-serif;
 }
 
 footer a {
@@ -265,16 +299,20 @@ footer a {
     justify-content: center;
     width: 100%;
     height: 100vh;
+    background-image: url('http://localhost/celiagaudin.fr/goodToKnow/content/assets/images/BG01.jpg');
+    background-size: cover;
 }
 
 #title_container h1 {
     font-size: 70px;
-    padding-bottom: 55px;
+    color: white;
+    text-shadow: black 1px 0 10px;
 }
 
 #title_container h3 {
     font-size: 20px;
-    padding-bottom: 100px;
+    color: white;
+    text-shadow: black 1px 0 10px;
 }
 /*****************************************Home Content******************/
 #main_home_content {
@@ -297,6 +335,7 @@ footer a {
     flex-direction: column;
     align-items: center;
     width: 100%;
+    background-color: rgb(183, 201, 214);;
 }
 #home_articles .list_content_articles{
     display: flex;
@@ -312,7 +351,9 @@ footer a {
     height: 250px;
     margin: 10px 10px 0px 0px;
     border: 1px solid rgb(106, 138, 159);
-    padding: 15px 5px;  
+    padding: 15px 5px; 
+    background-color: white; 
+    box-shadow: 1px 1px 2px 1px rgba(27, 33, 39, 0.5);
 }
 
 .img_resume_article{
