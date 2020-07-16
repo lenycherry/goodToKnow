@@ -151,11 +151,6 @@
 }
 
 /*//////////////////////////////////////////////////FORMS///////////////////////////////////////////////////*/
-@media screen and (max-width:1024px) {
-    #login_forms_container {
-        width: 90%;
-    }
-}
 
 @media screen and (max-width:768px) {
     #login_forms_container {

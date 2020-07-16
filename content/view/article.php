@@ -1,6 +1,7 @@
 <?php $title = "GTK " . $currentArticle->getTitle(); ?>
 <div id="article_page_container">
     <div id="article_container">
+        <img class="img_article" alt="<?php echo $currentArticle->getTitle(); ?>" src="<?php echo $currentArticle->getImageUrl(); ?>" >
         <h1> <?php echo $currentArticle->getTitle(); ?></h1>
         <div><?php echo $currentArticle->getContent(); ?></div>
         <p class="date">Crée le <?php echo $currentArticle->getCreateDate(); ?></p>

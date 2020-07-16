@@ -1,7 +1,7 @@
-<?php $title = 'Jean Forteroche - Editer un chapitre' ?>
+<?php $title = 'GTK - Editer un article' ?>
 <?php if (isset($_SESSION['admin']) && ($_SESSION['admin'] == 1)) : ?>
     <div id="edit_article_page_container">
-        <h1>Edition de chapitre</h1>
+        <h1>Edition d'article</h1>
         <form action="<?php echo HOST; ?>updateArticle/id/" method="post" enctype="multipart/form-data">
             <label for='title'>Titre</label>
             <input id="title" type="text" value="<?php echo $currentArticle->getTitle(); ?>" name="values[title]" />
@@ -11,7 +11,7 @@
             <img src="<?php echo $currentArticle->getImageUrl(); ?>">
 
 
-            <label for="textArea">Editer le chapitre</label>
+            <label for="textArea">Editer l'article</label>
             <textarea id='textArea' name='values[content]'>
    <?php echo $currentArticle->getContent(); ?>
   </textarea>

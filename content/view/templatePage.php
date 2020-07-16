@@ -15,10 +15,24 @@
 </head>
 
 <body>
+<div class="notif">
+        <?php if (isset($_SESSION['flash'])) : ?>
+            <?php foreach ($_SESSION['flash'] as $type => $message) : ?>
+                <div class="alert alert-<?= $type; ?>">
+                    <?= htmlSpecialChars($message); ?>
+                </div>
+            <?php endforeach; ?>
+            <?php unset($_SESSION['flash']); ?>
+        <?php endif; ?>
+    </div>
     <aside id="main_template_container">
         <header>
-            <h1><a href="<?php echo HOST; ?>home">GOOD to know</a></h1>
+            <div class="title_container">
+                <img class="home_logo" src="<?php echo ASSETS; ?>images/logo.png" alt="Dessin de cerveau dont une feuille pousse sur le dessus">
+                <h1><a href="<?php echo HOST; ?>home">GOOD to know</a></h1>
+            </div>
             <h4>Le petit journal scientifique de notre planète.</h4>
+
         </header>
         <nav id="main_navbar" class="reveal">
             <ul>
@@ -33,12 +47,12 @@
                 <?php
                 if (isset($_SESSION['id'])) {
                 ?>
-                    <li class="logout_button" title="Déconnexion"><a href="<?php echo HOST; ?>logout"><i class="fas fa-power-off fa-2x"></i>Se déconnecter </a></li>
+                    <li class="logout_button" title="Déconnexion"><a href="<?php echo HOST; ?>logout"><i class="fas fa-power-off fa-2x"></i>Déconnection </a></li>
                 <?php
                 } else {
                 ?>
 
-                    <li class="login_button" title="Se connecter"><a href="<?php echo HOST; ?>login"><i class="fas fa-user-circle fa-2x"></i>Se connecter</a></li>
+                    <li class="login_button" title="Se connecter"><a href="<?php echo HOST; ?>login"><i class="fas fa-user-circle fa-2x"></i>Connection</a></li>
                 <?php
                 }
                 ?>
@@ -50,16 +64,7 @@
             <p>Crédits photos : XXX - AAA - ZZZ</p>
         </footer>
     </aside>
-    <div class="notif">
-        <?php if (isset($_SESSION['flash'])) : ?>
-            <?php foreach ($_SESSION['flash'] as $type => $message) : ?>
-                <div class="alert alert-<?= $type; ?>">
-                    <?= htmlSpecialChars($message); ?>
-                </div>
-            <?php endforeach; ?>
-            <?php unset($_SESSION['flash']); ?>
-        <?php endif; ?>
-    </div>
+
     <main>
         <div class="fake_aside"></div>
         <div class="main_bloc"><?php echo $content; ?></div>

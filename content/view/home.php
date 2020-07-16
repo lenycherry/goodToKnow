@@ -6,19 +6,24 @@
 <div id='main_home_content' class="reveal">
   <?php $lastArticle = end($articles); ?>
   <h2><a href="<?php echo HOST; ?>article/id/<?php echo $lastArticle['id'] ?>"><?php echo $lastArticle['title']; ?></a></h2>
-  <div id="new_article_container"> 
-    <article class="new_article_content">
-      <p><?php echo substr($lastArticle['content'], 0, 500); ?> <p>...</p>
-    </article>
-    <img alt="<?php echo $lastArticle['title']; ?>" class="img_last_article" src="<?php echo $lastArticle['imageUrl']; ?>" />
-  </div>
-
+  <a class= "last_article_url" href="<?php echo HOST; ?>article/id/<?php echo $lastArticle['id'] ?>">
+    <div id="new_article_container">
+      <article class="new_article_content">
+        <p><?php echo substr($lastArticle['content'], 0, 250); ?> <p>...</p>
+      </article>
+      <img alt="<?php echo $lastArticle['title']; ?>" class="img_article" src="<?php echo $lastArticle['imageUrl']; ?>" />
+    </div>
+  </a>
+<hr class="home_hr">
   <div id="home_articles" class="reveal">
+    <h3>A lire également :</h3>
     <div class="list_content_articles">
-      <?php foreach ($articles as $article) : ?><a href="<?php echo HOST; ?>article/id/<?php echo $article['id'] ?>">
+      <?php foreach ($articles as $article) : ?>
+        <a href="<?php echo HOST; ?>article/id/<?php echo $article['id'] ?>">
           <article class="article_content_container invisible">
+            <h3 class="resume_title"><?php echo $article['title']; ?></h3>
+            <p class='resume_content'><?php echo substr($article['content'], 0, 150); ?> ...</p>
             <img alt="<?php echo $article['title']; ?>" class="img_resume_article" src="<?php echo $article['imageUrl']; ?>" />
-            <h3><?php echo $article['title']; ?></h3>
           </article>
         </a>
       <?php endforeach; ?>
