@@ -9,7 +9,7 @@
   <a class= "last_article_url" href="<?php echo HOST; ?>article/id/<?php echo $lastArticle['id'] ?>">
     <div id="new_article_container">
       <article class="new_article_content">
-        <p><?php echo substr($lastArticle['content'], 0, 250); ?> <p>...</p>
+        <p><?php echo substr($lastArticle['content'], 0, 300); ?> <p>...</p>
       </article>
       <img alt="<?php echo $lastArticle['title']; ?>" class="img_article" src="<?php echo $lastArticle['imageUrl']; ?>" />
     </div>

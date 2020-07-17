@@ -2,7 +2,7 @@
 
 namespace content\controller;
 use content\classes\View;
-use content\model\articleManager;
+use content\model\ArticleManager;
 use content\model\CommentManager;
 
 class AdminPanel

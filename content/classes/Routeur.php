@@ -4,6 +4,7 @@ namespace content\classes;
 
 class Routeur
 {
+   
     private $request;
 
     private $routes = [
@@ -33,7 +34,7 @@ class Routeur
 
         'adminPanel'    => ['controller' => 'AdminPanel',        'method' => 'showAdminPanel'],
         'home'          => ['controller' => 'Home',              'method' => 'showHome'],
-        'article'       => ['controller' => 'articleController', 'method' => 'showArticle'],
+        'article'       => ['controller' => 'ArticleController', 'method' => 'showArticle'],
     ];
 
     public function __construct($request)
@@ -69,12 +70,15 @@ class Routeur
     }
     public function  renderController()
     {
+
         $route = $this->getRoute();
         $params = $this->getParams();
+
         if (key_exists($route, $this->routes)) {
             $controller = "content\\controller\\" . $this->routes[$route]["controller"];
             $method = $this->routes[$route]['method'];
             $currentController = new $controller(); // instancie le controller demandé
+ 
             $currentController->$method($params); // appelle la méthode concernée
         } else if (!isset($_GET['r'])) {
             header("Location: home");

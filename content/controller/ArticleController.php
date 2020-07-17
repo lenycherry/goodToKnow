@@ -10,12 +10,14 @@ class ArticleController
 {
     public function showArticle($params)
     {
+     
         extract($params);
         $articleManager = new ArticleManager();
         $commentManager = new CommentManager();
         $currentArticle = $articleManager->findArticle($id);
         $articles = $articleManager->findAllArticle(); //stock le résultat de la fonction findAllArticle
         $comments = $commentManager->findAllCommentPerArticle($id); //stock le résultat de la fonction findAllComment
+       
         $myView = new View('article');
         $myView->render(array('articles' => $articles, 'currentArticle' => $currentArticle, 'comments' => $comments)); //execute render (mise en mémoire tampon du contenu désiré)
 

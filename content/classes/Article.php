@@ -1,6 +1,6 @@
 <?php
 
-namespace Content\classes;
+namespace content\classes;
 
 class Article
 {
