@@ -100,6 +100,9 @@
         width: 30px;
         margin-left: 5px;
     }
+    .back_to_up_btn{
+        width: 5%;
+    }
 }
 
 /*//////////////////////////////////////////////////HOME PAGE///////////////////////////////////////////////////*/
@@ -116,19 +119,39 @@
 
     #title_container h1 {
         font-size: 3em;
+        padding: 0 10px 0 10px;
+    }
+    #title_container h3 {
+        padding: 0 10px 0 10px;
+    }
+    #home_articles .article_content_container h3{
+        margin: 25% 0 25% 0;
+        padding: 5px;
+        background-color:rgba(0, 0, 0, .4);
+    }
+    #new_article_container img{
+        filter: brightness(50%);
     }
 }
 
 @media screen and (max-width:425px) {
+    #home_articles{
+        padding: 0;
+    }
     #main_home_content h2 {
         font-size: 1.5em;
+        padding: 0 10px 0 10px;
+    }
+    #main_home_content p {
+        font-size: 1.1em !important;
     }
 
     #new_article_container {
         height: 310px;
     }
     #new_article_container img{
-        max-width: 150%;
+        max-width: 150% !important;
+        filter: brightness(50%);
     }
 
     #new_article_container .new_article_content {
@@ -148,13 +171,20 @@
 /*//////////////////////////////////////////////////article PAGE///////////////////////////////////////////////////*/
 @media screen and (max-width:1024px) {
     #article_page_container {
-        width: 90%;
+        margin: 0;
+    }
+    #article_container{
+        padding: 10px 15px 60px 15px;
     }
 }
 
 @media screen and (max-width:768px) {
     #article_page_container {
         width: 100%;
+    }
+    #article_container{
+        overflow: hidden;
+        padding: 100px 15px 60px 15px;
     }
 }
 
@@ -165,39 +195,89 @@
 
     #article_container h1 {
         margin-bottom: 60px;
+        font-size: 1.6em;
     }
 }
 
 /*//////////////////////////////////////////////////CREATE article///////////////////////////////////////////////////*/
 @media screen and (max-width:1024px) {
     #create_article_page_container {
-        width: 95%;
+        margin-top: 100px;
     }
 }
 
 /*//////////////////////////////////////////////////EDIT article///////////////////////////////////////////////////*/
 @media screen and (max-width:768px) {
     #edit_article_page_container {
-        width: 95%;
+        margin-top: 100px;
     }
 }
 
 /*//////////////////////////////////////////////////EDIT COMMENT///////////////////////////////////////////////////*/
 @media screen and (max-width:768px) {
     #edit_page_container {
-        width: 95%;
+        margin-top: 100px;
     }
 }
 
 /*//////////////////////////////////////////////////ADMIN PANEL///////////////////////////////////////////////////*/
+@media screen and (max-width:1024px){
+    .comment_list_container{
+        width: 90%;
+        margin: auto;
+    }
+    #menu_admin{
+        width: 95%;
+    }
+    #admin_comment{
+        padding: 0%;
+    }
+    #admin_main_container {
+        width: 97%;
+        box-shadow: none;
+    }
+    #report_comments_container{
+        justify-content: center;
+    }
+    #admin_comment .admin_comments_content{
+        justify-content: center;
+    }
+    #list_articles_container{
+        justify-content: center;
+    }
+}
+@media screen and (max-width:768px) {
+    #admin_main_container {
+        width: 100%;
+        margin-top: 100px;
+    }
+    #admin_article{
+        padding: 40px 0 0 0;
+    }
+    #admin_article .create_article_btn {
+        margin-left: 11%;
+    }
+    .admin_comments_content{
+        justify-content: center;
+    }
+}
 @media screen and (max-width:425px) {
     #menu_admin .btn {
-        margin: 0 0.5%;
         max-width: 30%;
         padding: 1%;
         display: flex;
         align-items: center;
         text-align: center;
+    }
+    #admin_comment_reported{
+        padding: 35px 0 0 18px;
+    }
+    #menu_admin{
+        width: 95%;
+    }
+    .comment_list_container{
+        width: 90%;
+        margin: auto;
     }
 }
 
@@ -206,6 +286,7 @@
 @media screen and (max-width:768px) {
     #login_forms_container {
         height: auto;
+        margin-top: 100px;
     }
 
     #log_forms {
