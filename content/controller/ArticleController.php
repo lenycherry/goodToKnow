@@ -22,6 +22,15 @@ class ArticleController
         $myView->render(array('articles' => $articles, 'currentArticle' => $currentArticle, 'comments' => $comments)); //execute render (mise en mémoire tampon du contenu désiré)
 
     }
+    public function showAllArticles($params)
+    {
+        extract($params);
+        $articleManager = new ArticleManager();
+        $articles = $articleManager->findAllArticle();
+
+        $myView = new View('articles');
+        $myView->render(array('articles' => $articles));
+    }
     public function showCreateArticle() // affiche la page de création det article tinyMCE
     {
         $manager = new ArticleManager();

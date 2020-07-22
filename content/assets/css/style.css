@@ -184,6 +184,7 @@ header .home_logo {
 #main_template_container .title_container {
     display: flex;
     flex-flow: row wrap;
+    justify-content: center;
     margin-top: 20px;
     width: 100%;
 }
@@ -206,6 +207,8 @@ header h1 a {
 header h4 {
     color: rgb(183, 201, 214);
     margin-left: 20px;
+    width: 100%;
+    text-align: center;
 
 }
 
@@ -433,7 +436,8 @@ footer a {
     height: 225px;
     margin: 10px 10px 0px 0px;
     box-shadow: 1px 1px 2px 1px rgba(27, 33, 39, 0.5);
-    overflow: hidden;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0)) no-repeat;
+    background-size: 100% 50%;
 }
 
 #home_articles .img_resume_article {
@@ -550,7 +554,60 @@ footer a {
 #form_add_comment_container label {
     color: rgb(106, 138, 159);
 }
+/*///////////////////////////////////////////////////////////////////////////ALL ARTICLES PAGES//////////////*/
+#title_articles_container{
+    color: rgb(106, 159, 152);
+    margin-top: 100px;
+    text-align: center;
+}
+#content_all_articles{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 50px 0 50px 0;
+}
+#content_all_articles .article_content_container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 280px;
+    height: 225px;
+    margin: 10px 10px 0px 0px;
+    box-shadow: 1px 1px 2px 1px rgba(27, 33, 39, 0.5);
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0)) no-repeat;
+    background-size: 100% 50%;
+}
+#content_all_articles  .img_resume_article {
+    position: absolute;
+    top: 0;
+    min-height: 100%;
+    max-width: 100%;
+    z-index: -1;
+    transition: all ease 0.3s;
+}
+#content_all_articles .resume_title {
+    z-index: 2;
+    color: rgb(183, 201, 214);
+    margin: 15px;
+    text-shadow: black 1px 0 1px;
+}
 
+#content_all_articles p {
+    display: none;
+    color: rgb(183, 201, 214);
+    margin: 0 15px 15px 15px;
+    transition: all ease 0.5s;
+}
+
+#content_all_articles .article_content_container:hover img {
+    filter: blur(2px) brightness(50%);
+}
+
+#content_all_articles .article_content_container:hover p {
+    display: block;
+}
 /*/////////////////////////////////////////////////////////////////////////////TINYMCE///////////////////////*/
 .tox-tinymce {
     min-height: 60vh;
@@ -565,6 +622,7 @@ footer a {
 
 
  #home_admin_title {
+     margin-top: 100px;
     text-align: center;
     cursor: pointer;
     color:rgb(106, 159, 152);
@@ -618,6 +676,7 @@ footer a {
     margin: 10px 10px 0px 0px;
     border: 1px solid rgb(106, 159, 152);
     padding: 15px 5px;
+    background: none;
 }
 
 #admin_article .article_content_container img {
@@ -920,17 +979,22 @@ footer a {
 
 /*////////////////////////////////////////////////////////////////ALERT MESSAGE/////////////////////////////////////////////////////////////////////*/
 .alert {
+    position: absolute;
+    margin: auto;
+    width: 70%;
+    right: 0;
+    background-color: rgba(0,0,0, 0.5);
+    padding: 20px 0px;
+    font-size: 1.2em;
     word-break: break-all;
 }
 
 .alert-success {
     color: rgb(133, 173, 151);
     text-align: center;
-    margin-top: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 20px;
 }
 
 .alert-success::before {
@@ -953,11 +1017,9 @@ footer a {
 .alert-fail {
     color: rgb(218, 103, 74);
     text-align: center;
-    margin-top: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 20px;
 }
 
 .alert-fail::before {

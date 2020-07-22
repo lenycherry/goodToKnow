@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?= $title ?></title>
     <meta name="description" content="Découvrez GOOD to know, le journal de l'écologie. Préserver l'environnement, ça s'apprend! Blog Fictif PHP MySQL JS réalisé par Célia Gaudin dans le cadre d'un projet d'étude OpenClassroom">
+    <link rel="icon" type="image/png" href="<?php echo ASSETS; ?>images/fav.png"/>
     <link href="<?php echo ASSETS; ?>css/style.css" rel="stylesheet" />
     <link href="<?php echo ASSETS; ?>css/responsiv.css" rel="stylesheet" />
     <link href="<?php echo ASSETS; ?>css/animation.css" rel="stylesheet" />
@@ -36,7 +37,7 @@
         <nav id="main_navbar" class="reveal">
             <ul>
                 <li><a href="<?php echo HOST; ?>home"><i class="fas fa-home fa-2x"></i>Accueil</a></li>
-                <li><a href="<?php echo HOST; ?>"><i class="far fa-newspaper fa-2x"></i>Articles</a></li>
+                <li><a href="<?php echo HOST; ?>articles"><i class="far fa-newspaper fa-2x"></i>Articles</a></li>
                 <?php if (isset($_SESSION['admin'])) : ?>
                     <?php if ($_SESSION['admin'] == 1) : ?>
                         <li class="admin_button" title="Panneau d'administration"><a href="<?php echo HOST; ?>adminPanel"><i class="fas fa-edit fa-2x"></i>Espace Admin</a></li>
@@ -57,7 +58,7 @@
         </nav>
         <footer>
             <p>Blog Fictif PHP créé par Célia Gaudin dans le cadre d'un projet d'étude OpenClassrooms.</p>
-            <p>Crédits photos : XXX - AAA - ZZZ</p>
+            <p>Crédits photos : <a href="https://unsplash.com/@renran ">Ren Ran</a></p>
         </footer>
     </aside>
 
@@ -70,7 +71,7 @@
         <nav id="main_responsive_navbar">
             <ul>
                 <li class="home_icon" title="Accueil"><a href="<?php echo HOST; ?>home"><i class="fas fa-home fa-2x"></i></a></li>
-                <li class="article_icon" title="Voir les articles"><a href="<?php echo HOST; ?>"><i class="far fa-newspaper fa-2x"></i></a></li>
+                <li class="article_icon" title="Voir les articles"><a href="<?php echo HOST; ?>articles"><i class="far fa-newspaper fa-2x"></i></a></li>
                 <?php if (isset($_SESSION['admin'])) : ?>
                     <?php if ($_SESSION['admin'] == 1) : ?>
 
@@ -102,7 +103,7 @@
     <!--footer responsive-->
     <footer id="responsive_footer_container">
         <p>Blog Fictif PHP créé par Célia Gaudin dans le cadre d'un projet d'étude OpenClassrooms.</p>
-        <p>Crédits photos : XXX - AAA - ZZZ</p>
+        <p>Crédits photos : <a href="https://unsplash.com/@renran ">Ren Ran</a></p>
     </footer>
     <!--end footer responsive-->
 

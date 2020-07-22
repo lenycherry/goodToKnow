@@ -125,12 +125,17 @@
         padding: 0 10px 0 10px;
     }
     #home_articles .article_content_container h3{
-        margin: 25% 0 25% 0;
-        padding: 5px;
-        background-color:rgba(0, 0, 0, .4);
+        padding-top: 25%;
     }
     #new_article_container img{
         filter: brightness(50%);
+    }
+    #home_articles .article_content_container:hover p {
+        display: none;
+    }
+    #home_articles .article_content_container{
+        background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.6), rgba(0,0,0,0)) no-repeat;
+        background-size: 100% 100%;   
     }
 }
 
@@ -168,7 +173,7 @@
     }
 }
 
-/*//////////////////////////////////////////////////article PAGE///////////////////////////////////////////////////*/
+/*//////////////////////////////////////////////////ARTICLE PAGE///////////////////////////////////////////////////*/
 @media screen and (max-width:1024px) {
     #article_page_container {
         margin: 0;
@@ -198,7 +203,20 @@
         font-size: 1.6em;
     }
 }
+/*//////////////////////////////////////////////////ARTICLES PAGE///////////////////////////////////////////////////*/
+@media screen and (max-width:768px) {
 
+    #content_all_articles .article_content_container h3{
+        padding-top: 25%;
+    }
+    #content_all_articles .article_content_container:hover p {
+        display: none;
+    }
+    #content_all_articles .article_content_container{
+        background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.6), rgba(0,0,0,0)) no-repeat;
+        background-size: 100% 100%;   
+    }
+}
 /*//////////////////////////////////////////////////CREATE article///////////////////////////////////////////////////*/
 @media screen and (max-width:1024px) {
     #create_article_page_container {
@@ -249,7 +267,6 @@
 @media screen and (max-width:768px) {
     #admin_main_container {
         width: 100%;
-        margin-top: 100px;
     }
     #admin_article{
         padding: 40px 0 0 0;
@@ -311,5 +328,12 @@
 
     #login_forms_container h3 {
         margin-top: 40px;
+    }
+}
+/*//////////////////////////////////////////////////ALERT PHP///////////////////////////////////////////////////*/
+@media screen and (max-width:768px){
+    .alert{
+        width: 100%;
+        margin-top: 75px;
     }
 }

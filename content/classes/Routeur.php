@@ -35,6 +35,7 @@ class Routeur
         'adminPanel'    => ['controller' => 'AdminPanel',        'method' => 'showAdminPanel'],
         'home'          => ['controller' => 'Home',              'method' => 'showHome'],
         'article'       => ['controller' => 'ArticleController', 'method' => 'showArticle'],
+        'articles'       => ['controller' => 'ArticleController', 'method' => 'showAllArticles'],
     ];
 
     public function __construct($request)

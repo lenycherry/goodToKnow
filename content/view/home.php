@@ -9,20 +9,20 @@
   <a class= "last_article_url" href="<?php echo HOST; ?>article/id/<?php echo $lastArticle['id'] ?>">
     <div id="new_article_container">
       <div class="new_article_content">
-        <p><?php echo substr($lastArticle['content'], 0, 300); ?> <p>...</p>
+        <p><?php echo substr($lastArticle['content'], 0, 300); ?>...</p>
 </div>
       <img alt="<?php echo $lastArticle['title']; ?>" class="img_article" src="<?php echo $lastArticle['imageUrl']; ?>" />
     </div>
   </a>
 <hr class="home_hr">
   <div id="home_articles" class="reveal">
-    <h3>A lire également :</h3>
+    <h3>À lire également :</h3>
     <div class="list_content_articles">
       <?php foreach ($articles as $article) : ?>
         <a href="<?php echo HOST; ?>article/id/<?php echo $article['id'] ?>">
           <div class="article_content_container invisible">
             <h3 class="resume_title"><?php echo $article['title']; ?></h3>
-            <p class='resume_content'><?php echo substr($article['content'], 0, 150); ?> ...</p>
+            <div class='resume_content'><?php echo substr($article['content'], 0, 200); ?> ...</div>
             <img alt="<?php echo $article['title']; ?>" class="img_resume_article" src="<?php echo $article['imageUrl']; ?>" />
       </div>
         </a>
