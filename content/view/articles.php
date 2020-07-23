@@ -11,5 +11,4 @@
         </a>
       <?php endforeach; ?>
     </div>
-
     <script src="<?php echo ASSETS; ?>js/IntersectionObserver.js"></script>

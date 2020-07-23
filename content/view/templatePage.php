@@ -29,7 +29,7 @@
     <aside id="main_template_container">
         <header>
             <div class="title_container">
-                <img class="home_logo" src="<?php echo ASSETS; ?>images/logo.png" alt="Dessin de cerveau dont une feuille pousse sur le dessus">
+                <img class="home_logo wobble-hor-bottom" src="<?php echo ASSETS; ?>images/logo.png" alt="Dessin de cerveau dont une feuille pousse sur le dessus">
                 <h1><a href="<?php echo HOST; ?>home">GOOD to know</a></h1>
             </div>
             <h4>Le petit journal scientifique de notre planète.</h4>
@@ -50,7 +50,7 @@
                 <?php
                 } else {
                 ?>
-                    <li class="login_button" title="Se connecter"><a href="<?php echo HOST; ?>login"><i class="fas fa-user-circle fa-2x"></i>Connection</a></li>
+                    <li class="login_button" title="Se connecter"><a href="<?php echo HOST; ?>login"><i class="fas fa-user-circle fa-2x"></i>Connexion</a></li>
                 <?php
                 }
                 ?>

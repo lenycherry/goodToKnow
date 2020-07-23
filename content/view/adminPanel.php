@@ -13,7 +13,7 @@
                 <?php foreach ($articles as $article) : ?>
                     <article class="article_content_container invisible">
                         <h3><?php echo $article['title']; ?></h3>
-                        <img alt="<?php echo $article['title']; ?>" class="img_resume_article" src="<?php echo $article['imageUrl']; ?>" />
+                        <img alt="<?php echo $article['title']; ?>" class="img_resume_article " src="<?php echo $article['imageUrl']; ?>" />
                         <div class="resume">
                             <p><?php echo $article['content']; ?></p>
                         </div>

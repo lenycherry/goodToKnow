@@ -10,7 +10,7 @@ class ArticleManager extends Manager //gère la connection à la bdd par son par
 {
     public function findAllArticle()
     {
-        $req = $this->bdd->prepare("SELECT *,DATE_FORMAT(create_date, '%d/%m/%Y à %Hh%i') AS create_date,DATE_FORMAT(edit_date, '%d/%m/%Y à %Hh%i') AS edit_date FROM GTK_articles ORDER BY id");
+        $req = $this->bdd->prepare("SELECT *,DATE_FORMAT(create_date, '%d/%m/%Y à %Hh%i') AS create_date,DATE_FORMAT(edit_date, '%d/%m/%Y à %Hh%i') AS edit_date FROM GTK_articles ORDER BY id DESC");
         $req->execute();
         $articles = $req->fetchAll();
         return $articles;
