@@ -936,7 +936,9 @@ footer a {
     display: flex;
     flex-direction: column;
 }
-
+#register_form_container{
+    max-width: 30%;
+}
 #register_form_container form {
     display: flex;
     flex-direction: column;

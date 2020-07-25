@@ -9,7 +9,7 @@
 </div>
 <div id='main_home_content' class="reveal">
   <?php $lastArticle = $articles[0]; ?>
-  <h2><a href="<?php echo HOST; ?>article/id/<?php echo $lastArticle['id'] ?>"><?php echo $lastArticle['title']; ?></a></h2>
+  <h2><a href="<?php echo HOST; ?>article/id/<?php echo $lastArticle['id'] ?>"><?php echo htmlspecialchars($lastArticle['title']); ?></a></h2>
   <a class= "last_article_url" href="<?php echo HOST; ?>article/id/<?php echo $lastArticle['id'] ?>">
     <div id="new_article_container">
       <div class="new_article_content">
@@ -25,7 +25,7 @@
       <?php foreach ($articles as $article) : ?>
         <a href="<?php echo HOST; ?>article/id/<?php echo $article['id'] ?>">
           <div class="article_content_container invisible">
-            <h3 class="resume_title"><?php echo $article['title']; ?></h3>
+            <h3 class="resume_title"><?php echo htmlspecialchars($article['title']); ?></h3>
             <div class='resume_content'><?php echo substr($article['content'], 0, 200); ?> ...</div>
             <img alt="<?php echo $article['title']; ?>" class="img_resume_article lazy" data-src="<?php echo $article['imageUrl']; ?>" />
       </div>

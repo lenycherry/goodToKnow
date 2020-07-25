@@ -12,7 +12,7 @@
             <div id="list_articles_container" class="list_content_admin">
                 <?php foreach ($articles as $article) : ?>
                     <article class="article_content_container invisible">
-                        <h3><?php echo $article['title']; ?></h3>
+                        <h3><?php echo htmlspecialchars($article['title']); ?></h3>
                         <img alt="<?php echo $article['title']; ?>" class="img_resume_article " src="<?php echo $article['imageUrl']; ?>" />
                         <div class="resume">
                             <p><?php echo $article['content']; ?></p>
