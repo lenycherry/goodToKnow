@@ -13,89 +13,70 @@
     margin-top: 10px;
     align-items: baseline;
 }
-
 #header_responsive_container ul {
     display: flex;
     justify-content: space-between;
 }
-
 #header_responsive_container li {
     list-style: none;
     padding-bottom: 20px;
 }
-
 #header_responsive_container li i {
     text-decoration: none;
     color: rgb(106, 159, 152);
     transition: all ease 0.2s;
     margin: 0px 20px 0px 10px
 }
-
 #header_responsive_container li:hover i {
     color: rgb(106, 159, 152);
     transform: scale(1.1);
 }
-
 #responsive_footer_container {
     display: none;
 }
-
 /*//////////////////////////////////////////////////TEMPLATE///////////////////////////////////////////////////*/
-
 @media screen and (max-width:1440px) {
     #main_navbar {
         width: 50%;
     }
 }
-
 @media screen and (max-width:1024px) {
-
     #main_navbar {
         width: 60%;
     }
-
     #main_template_container .title_container {
         flex-direction: column;
         align-items: center;
     }
 }
-
 @media screen and (max-width:768px) {
     #main_template_container {
         display: none;
     }
-
     main .fake_aside {
         display: none;
     }
-
     #header_responsive_container {
         display: flex;
     }
-
     #responsive_footer_container {
         display: flex;
     }
-
     #header_responsive_container h1 {
         font-size: 1.5em;
     }
 }
-
 @media screen and (max-width:425px) {
     #header_responsive_container .home_icon {
         display: none;
     }
-
     #header_responsive_container li i {
         font-size: 1.6em;
         margin: 0px 10px 0px 10px;
     }
-
     #header_responsive_container h1 {
         font-size: 1em;
     }
-
     #header_responsive_container .home_logo {
         width: 30px;
         margin-left: 5px;
@@ -104,19 +85,14 @@
         width: 5%;
     }
 }
-
 /*//////////////////////////////////////////////////HOME PAGE///////////////////////////////////////////////////*/
-
-
 @media screen and (max-width:768px) {
     main .main_bloc {
         width: 100%;
     }
-
     .fa-chevron-circle-up {
         left: 90vw;
     }
-
     #title_container h1 {
         font-size: 3em;
         padding: 0 10px 0 10px;
@@ -138,7 +114,6 @@
         background-size: 100% 100%;   
     }
 }
-
 @media screen and (max-width:425px) {
     #home_articles{
         padding: 0;
@@ -150,7 +125,6 @@
     #main_home_content p {
         font-size: 1.1em !important;
     }
-
     #new_article_container {
         height: 310px;
     }
@@ -158,11 +132,9 @@
         max-width: 150% !important;
         filter: brightness(50%);
     }
-
     #new_article_container .new_article_content {
         padding: 10px;
     }
-
     #main_home_content .last_article_url {
         width: 95%;
         margin: 20px;
@@ -172,7 +144,6 @@
         margin-bottom: 20px;
     }
 }
-
 /*//////////////////////////////////////////////////ARTICLE PAGE///////////////////////////////////////////////////*/
 @media screen and (max-width:1024px) {
     #article_page_container {
@@ -182,7 +153,6 @@
         padding: 10px 15px 60px 15px;
     }
 }
-
 @media screen and (max-width:768px) {
     #article_page_container {
         width: 100%;
@@ -192,12 +162,10 @@
         padding: 100px 15px 60px 15px;
     }
 }
-
 @media screen and (max-width:425px) {
     #article_container {
         padding: 30px 2%;
     }
-
     #article_container h1 {
         margin-bottom: 60px;
         font-size: 1.6em;
@@ -205,7 +173,6 @@
 }
 /*//////////////////////////////////////////////////ARTICLES PAGE///////////////////////////////////////////////////*/
 @media screen and (max-width:768px) {
-
     #content_all_articles .article_content_container h3{
         padding-top: 25%;
     }
@@ -223,21 +190,18 @@
         margin-top: 100px;
     }
 }
-
 /*//////////////////////////////////////////////////EDIT article///////////////////////////////////////////////////*/
 @media screen and (max-width:768px) {
     #edit_article_page_container {
         margin-top: 100px;
     }
 }
-
 /*//////////////////////////////////////////////////EDIT COMMENT///////////////////////////////////////////////////*/
 @media screen and (max-width:768px) {
     #edit_page_container {
         margin-top: 100px;
     }
 }
-
 /*//////////////////////////////////////////////////ADMIN PANEL///////////////////////////////////////////////////*/
 @media screen and (max-width:1024px){
     .comment_list_container{
@@ -297,36 +261,29 @@
         margin: auto;
     }
 }
-
 /*//////////////////////////////////////////////////FORMS///////////////////////////////////////////////////*/
-
 @media screen and (max-width:768px) {
     #login_forms_container {
         height: auto;
         margin-top: 100px;
     }
-
     #log_forms {
         flex-flow: row wrap;
     }
-
     #login_form_container,
     #register_form_container {
         width: 90%;
         max-width: 100%;
         margin-bottom: 40px;
     }
-
     #register_form_container::before {
         width: 30vw;
         height: 2px;
         left: 35vw;
     }
-
     #login_forms_container input {
         width: 50%;
     }
-
     #login_forms_container h3 {
         margin-top: 40px;
     }

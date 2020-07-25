@@ -8,21 +8,6 @@ use content\classes\View;
 
 class CommentController
 {
-    public function showComment($params)
-    {
-        extract($params);
-        $manager = new CommentManager();
-        $articleManager = new ArticleManager();
-        $currentComment = $manager->findComment($id);
-        $articles = $articleManager->findAllArticle();// Recherche de la liste des articles pour le menu déroulant
-        $comments = $manager->findAllComment(); //stock le résultat de la fonction findAllArticle
-        $myView = new View('comment');
-        $myView->render(array(
-            'comments' => $comments,
-            'currentComment' => $currentComment,
-            'articles' => $articles
-        )); //execute render (mise en mémoire tampon du contenu désiré)
-    }
     public function showEditComment($params)
     {
         extract($params);

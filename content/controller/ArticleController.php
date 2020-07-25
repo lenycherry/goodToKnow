@@ -10,7 +10,6 @@ class ArticleController
 {
     public function showArticle($params)
     {
-     
         extract($params);
         $articleManager = new ArticleManager();
         $commentManager = new CommentManager();
@@ -20,7 +19,6 @@ class ArticleController
        
         $myView = new View('article');
         $myView->render(array('articles' => $articles, 'currentArticle' => $currentArticle, 'comments' => $comments)); //execute render (mise en mémoire tampon du contenu désiré)
-
     }
     public function showAllArticles($params)
     {
@@ -163,8 +161,7 @@ class ArticleController
         }
         $myView = new View();
         $myView->redirect('adminPanel');
-    }
-    
+    } 
     public function deleteArticle($params)
     {
         extract($params);

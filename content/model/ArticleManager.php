@@ -43,7 +43,6 @@ class ArticleManager extends Manager //gère la connection à la bdd par son par
     }
     public function updateArticle($dataArticle,$imageUrl)
     {
-        //var_dump($imageUrl);exit;
         $title = $dataArticle['title'];
         $content = $dataArticle['content'];
         $id = $dataArticle['id'];

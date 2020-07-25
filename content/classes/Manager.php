@@ -2,7 +2,7 @@
 
 namespace content\classes;
 
-use Exception;
+use PDOException;
 use PDO;
 
 class Manager //gère la connection à la bdd
@@ -12,8 +12,11 @@ class Manager //gère la connection à la bdd
     {
         try {
             $this->bdd = new PDO('mysql:host=celiagaufg67.mysql.db;dbname=celiagaufg67;charset=utf8', 'celiagaufg67', '5MV2haheegs');
-        } catch (Exception $e) {
-            die('Erreur : ' . $e->getMessage());
+        } catch (PDOException $e) {
+            session_start();
+            $_SESSION['flash']['fail'] = 'Une erreur de connexion à la base de donnée est survenue:' . $e->getMessage();
+            $myView = new View('home');
+        $myView->render(); 
         }
     }
 }

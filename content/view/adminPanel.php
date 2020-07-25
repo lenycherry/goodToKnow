@@ -7,6 +7,7 @@
             <div id="admin_comments_btn" class="btn">Gérer les commentaires</div>
             <div id="admin_reported_btn" class="btn">Gérer les commentaires signalés</div>
         </div>
+
         <div id='admin_article' class="menu_visible">
             <a href="createArticle" class="create_article_btn btn">Créer un nouvel article</a>
             <div id="list_articles_container" class="list_content_admin">
@@ -37,6 +38,7 @@
                             <button class="last_page_btn btn">>|</button>
             </div>
         </div>
+
         <div id="admin_comment" class="menu_invisible">
             <?php $totalComments = 0; ?>
             <?php foreach ($comments as $comment) : ?>
@@ -92,6 +94,7 @@
                     <?php endforeach; ?>
             </div>
         </div>
+        
         <div id="admin_comment_reported" class="menu_invisible">
             <h2>Commentaires signalés</h2>
             <?php if (isset($comments)) : ?>

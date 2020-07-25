@@ -10,7 +10,6 @@ class CommentDisplay {
 
         this.findJson()
         this.intervalResfresh = setInterval(e => this.refreshJson(), 8000);
-
     }
     // requête ajax pour afficher les commentaires dynamiquement dans le Html.
     findJson = async function () {

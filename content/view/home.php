@@ -27,7 +27,7 @@
           <div class="article_content_container invisible">
             <h3 class="resume_title"><?php echo htmlspecialchars($article['title']); ?></h3>
             <div class='resume_content'><?php echo substr($article['content'], 0, 200); ?> ...</div>
-            <img alt="<?php echo $article['title']; ?>" class="img_resume_article lazy" data-src="<?php echo $article['imageUrl']; ?>" />
+            <img alt="<?php echo $article['title']; ?>" class="img_resume_article lazy" src="<?php echo ASSETS; ?>images/reload.png" data-src="<?php echo $article['imageUrl']; ?>" />
       </div>
         </a>
       <?php endforeach; ?>
@@ -38,8 +38,6 @@
             <button class="last_page_btn btn">>|</button>
     </div>
   </div>
-
-
 </div>
 
 <script src="<?php echo ASSETS; ?>js/LazyLoading.js"></script>

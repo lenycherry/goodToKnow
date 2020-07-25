@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?= $title ?></title>
-    <meta name="description" content="Découvrez GOOD to know, le journal de l'écologie. Préserver l'environnement, ça s'apprend! Blog Fictif PHP MySQL JS réalisé par Célia Gaudin dans le cadre d'un projet d'étude OpenClassroom">
+    <meta name="description" content="Découvrez GOOD to know, le petit journal de l'écologie. Préserver l'environnement, ça s'apprend! Blog Fictif PHP MySQL JS réalisé par Célia Gaudin dans le cadre d'un projet d'étude OpenClassroom">
     <link rel="icon" type="image/png" href="<?php echo ASSETS; ?>images/fav.png"/>
     <link href="<?php echo ASSETS; ?>css/style.css" rel="stylesheet" />
     <link href="<?php echo ASSETS; ?>css/responsiv.css" rel="stylesheet" />

@@ -88,18 +88,15 @@ video {
     border: 0;
     vertical-align: baseline;
 }
-
 html {
     scroll-behavior: smooth;
     font-family: 'Oswald', sans-serif;
 }
-
 button {
     border: none;
     font-size: inherit;
     font-family: 'Oswald', sans-serif;
 }
-
 .btn {
     color: rgb(106, 159, 152);
     transition: all 0.5s;
@@ -108,7 +105,6 @@ button {
     margin: 5px;
     width: max-content;
 }
-
 .btn::before {
     content: '';
     position: absolute;
@@ -117,15 +113,13 @@ button {
     width: 100%;
     height: 100%;
     z-index: 1;
-    background-color:rgba(183, 201, 214, 0.4);
+    background-color: rgba(183, 201, 214, 0.4);
     transition: all 0.3s;
 }
-
 .btn:hover::before {
     opacity: 0;
     transform: scale(0.5, 0.5);
 }
-
 .btn::after {
     content: '';
     position: absolute;
@@ -139,22 +133,18 @@ button {
     border: 1px solid rgba(27, 33, 39, 0.5);
     transform: scale(1.2, 1.2);
 }
-
 .btn:hover::after {
     opacity: 1;
     transform: scale(1, 1);
 }
-
 a {
     text-decoration: none;
 }
-
 p {
     font-family: 'New Roman', sans-serif;
     word-break: break-word;
     line-height: 1.4;
 }
-
 /*//////////////////////////////////////////////////////////////////////////////////////////////////ASIDE//////////////////*/
 #main_template_container {
     position: fixed;
@@ -166,7 +156,6 @@ p {
     transition: all ease 0.3s;
     background-color: white
 }
-
 #main_template_container:hover {
     background-color: rgb(68, 74, 80);
 }
@@ -175,12 +164,10 @@ header .home_logo {
     width: 40px;
     margin-left: 15px;
 }
-
-#main_template_container header  {
+#main_template_container header {
     display: flex;
     flex-flow: row wrap;
 }
-
 #main_template_container .title_container {
     display: flex;
     flex-flow: row wrap;
@@ -188,89 +175,69 @@ header .home_logo {
     margin-top: 20px;
     width: 100%;
 }
-
 header h1 {
     margin: 0;
     font-size: xx-large;
     width: max-content;
 }
-
 header h1:hover a {
     color: white;
 }
-
 header h1 a {
     text-decoration: none;
     color: rgb(106, 159, 152);
 }
-
 header h4 {
     color: rgb(183, 201, 214);
     margin-left: 20px;
     width: 100%;
     text-align: center;
-
 }
-
 #main_navbar {
     position: relative;
     display: flex;
     flex-flow: row wrap;
     width: 38%;
     margin: auto;
-
 }
-
 #main_navbar ul {
     flex-flow: row wrap;
     display: flex;
     justify-content: space-between;
-
 }
-
 #main_navbar li {
     list-style: none;
     position: relative;
     padding-bottom: 20px;
 }
-
 #main_navbar li i {
     text-decoration: none;
     color: rgb(106, 159, 152);
     transition: all ease 0.2s;
     margin: 0px 20px 0px 10px
 }
-
 #main_navbar li:hover i {
     color: rgb(106, 159, 152);
     transform: scale(1.1);
 }
-
 #main_navbar li a {
     color: rgb(183, 201, 214);
 }
-
 #main_navbar li:hover a {
     color: rgb(106, 159, 152);
-
 }
-
-
 /*///////////////////////////////////////////////////////////////////////////////////////////MAIN//////////////////*/
 main {
     display: flex;
     min-height: 85vh;
 }
-
 main .fake_aside {
     height: 100vh;
     width: 30%;
 }
-
 main .main_bloc {
     width: 70%;
 }
-
 /*///////////////////////////////////////////////////////////////////////////////////////////FOOTER//////////////////*/
 .back_to_up_btn {
     color: rgb(183, 201, 214);
@@ -283,12 +250,10 @@ main .main_bloc {
     transition: all ease 0.2s;
     z-index: 100;
 }
-
 .back_to_up_btn:hover {
     color: rgb(106, 159, 152);
     transform: scale(1.1);
 }
-
 footer {
     position: relative;
     bottom: 0;
@@ -301,18 +266,15 @@ footer {
     padding: 20px 0px;
     height: 10vh;
 }
-
 footer p {
     color: white;
     font-size: small;
     font-family: 'Oswald', sans-serif;
 }
-
 footer a {
     color: rgb(106, 138, 159);
     font-weight: 600;
 }
-
 /*/////////////////////////////////////////////////////////////////////////////////////////HOME PAGE/////////////////*/
 /*****************************************Title******************/
 #title_container {
@@ -325,21 +287,18 @@ footer a {
     background-image: url('https://www.celiagaudin.fr/goodToKnow/content/assets/images/BG01.jpg');
     background-size: cover;
 }
-
 #title_container h1 {
     font-size: 4em;
     color: white;
     text-shadow: black 1px 0 10px;
 }
-
 #title_container h3 {
     font-size: 20px;
     color: white;
     text-shadow: black 1px 0 10px;
     text-align: center;
 }
-
-/*****************************************Home Content******************/
+/****************************************Home Content************/
 #main_home_content {
     display: flex;
     flex-flow: row wrap;
@@ -352,28 +311,23 @@ footer a {
     text-align: center;
     margin-top: 50px;
 }
-
 #main_home_content h2 a {
     color: rgb(106, 159, 152);
 }
-
 #main_home_content h2:hover a {
     color: rgb(183, 201, 214);
 }
-
 #main_home_content .last_article_url {
     width: 70%;
     min-height: 400px;
     margin: 50px 0 50px 0;
 }
-
 #main_home_content .home_hr {
     width: 80%;
     height: 1px;
     background-color: rgb(106, 159, 152);
     margin-bottom: 50px;
 }
-
 #new_article_container {
     position: relative;
     display: flex;
@@ -383,28 +337,23 @@ footer a {
     overflow: hidden;
     height: 400px;
 }
-
 #new_article_container .new_article_content {
     padding: 35px;
     z-index: 2;
 }
-
 #new_article_container .new_article_content p {
     font-size: 1.3em;
     color: rgb(183, 201, 214);
 }
-
 #new_article_container .img_article {
     position: absolute;
     max-width: 100%;
     min-height: 100%;
     transition: all ease 0.3s;
 }
-
 #new_article_container:hover .img_article {
     filter: blur(2px) brightness(50%);
 }
-
 #home_articles {
     display: flex;
     flex-direction: column;
@@ -413,19 +362,16 @@ footer a {
     margin-bottom: 100px;
     padding: 0 20px 0 20px;
 }
-
 #home_articles h3 {
     color: rgb(106, 159, 152);
     margin-bottom: 20px;
 }
-
 #home_articles .list_content_articles {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     margin-bottom: 20px;
 }
-
 .article_content_container {
     position: relative;
     display: flex;
@@ -436,10 +382,9 @@ footer a {
     height: 225px;
     margin: 10px 10px 0px 0px;
     box-shadow: 1px 1px 2px 1px rgba(27, 33, 39, 0.5);
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0)) no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)) no-repeat;
     background-size: 100% 50%;
 }
-
 #home_articles .img_resume_article {
     position: absolute;
     top: 0;
@@ -448,35 +393,28 @@ footer a {
     z-index: -1;
     transition: all ease 0.3s;
 }
-
 #home_articles .resume_title {
     z-index: 2;
     color: rgb(183, 201, 214);
     margin: 15px;
     text-shadow: black 1px 0 1px;
 }
-
 .article_content_container p {
     display: none;
     color: rgb(183, 201, 214);
     margin: 15px;
     transition: all ease 0.5s;
 }
-
 #home_articles .article_content_container:hover img {
     filter: blur(2px) brightness(50%);
 }
-
 #home_articles .article_content_container:hover p {
     display: block;
 }
-
 /*////////////////////////////////////////////////////////////////////////article PAGE///////////////////////*/
 #article_page_container {
-
     margin-top: 50px;
 }
-
 /*************************************article******************/
 #article_container {
     display: flex;
@@ -487,30 +425,25 @@ footer a {
     padding: 30px 60px;
     box-shadow: 5px 5px 2px 1px rgba(27, 33, 39, 0.5);
 }
-
 #article_container .img_article {
     margin-bottom: 50px;
     max-width: 100vh;
 }
-
 #article_container img {
     max-width: 100%;
     height: auto;
 }
-
 #article_container h1 {
     color: rgb(106, 159, 152);
     margin-bottom: 50px;
     text-align: center;
 }
-
 #article_container .date {
     margin-top: 20px;
     font-size: small;
     font-family: 'Oswald', sans-serif;
     color: rgb(106, 159, 152);
 }
-
 /************************************Comment******************/
 #comments_container {
     display: flex;
@@ -520,53 +453,47 @@ footer a {
     background-color: white;
     box-shadow: 5px 5px 2px 1px rgba(27, 33, 39, 0.5);
 }
-
 .article_comment_container {
     background-color: white;
     padding: 15px;
     border-top: 1px solid rgb(106, 138, 159);
 
 }
-
 .article_comment_container h3 {
     padding-bottom: 10px;
     color: rgb(106, 159, 152);
 }
-
 .article_comment_container .date_comment {
     font-size: small;
     color: rgb(106, 138, 159);
     margin-bottom: 10px;
 }
-
 #form_add_comment_container {
     display: flex;
     flex-direction: column;
     margin: 15px 0 15px 7%;
 }
-
 #area_add_comment_container {
     border: solid 1px black;
     height: 100px;
     width: 90%;
 }
-
 #form_add_comment_container label {
     color: rgb(106, 138, 159);
 }
 /*///////////////////////////////////////////////////////////////////////////ALL ARTICLES PAGES//////////////*/
-#title_articles_container{
+#title_articles_container {
     color: rgb(106, 159, 152);
     margin-top: 100px;
     text-align: center;
 }
-#content_all_articles{
+#content_all_articles {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     padding: 50px 0 50px 0;
 }
-#content_all_articles .article_content_container{
+#content_all_articles .article_content_container {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -576,10 +503,10 @@ footer a {
     height: 225px;
     margin: 10px 10px 0px 0px;
     box-shadow: 1px 1px 2px 1px rgba(27, 33, 39, 0.5);
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0)) no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)) no-repeat;
     background-size: 100% 50%;
 }
-#content_all_articles  .img_resume_article {
+#content_all_articles .img_resume_article {
     position: absolute;
     top: 0;
     min-height: 100%;
@@ -593,18 +520,15 @@ footer a {
     margin: 15px;
     text-shadow: black 1px 0 1px;
 }
-
 #content_all_articles p {
     display: none;
     color: rgb(183, 201, 214);
     margin: 0 15px 15px 15px;
     transition: all ease 0.5s;
 }
-
 #content_all_articles .article_content_container:hover img {
     filter: blur(2px) brightness(50%);
 }
-
 #content_all_articles .article_content_container:hover p {
     display: block;
 }
@@ -612,60 +536,48 @@ footer a {
 .tox-tinymce {
     min-height: 60vh;
 }
-
 /*///////////////////////////////////////////////////////////////////////////ADMIN PANEL/////////////////////*/
 #admin_main_container {
     min-height: 100vh;
-   box-shadow: 5px 5px 2px 1px rgba(27, 33, 39, 0.5);
-   padding-bottom: 30px;
+    box-shadow: 5px 5px 2px 1px rgba(27, 33, 39, 0.5);
+    padding-bottom: 30px;
 }
-
-
- #home_admin_title {
-     margin-top: 100px;
+#home_admin_title {
+    margin-top: 100px;
     text-align: center;
     cursor: pointer;
-    color:rgb(106, 159, 152);
+    color: rgb(106, 159, 152);
 }
-
 #menu_admin {
     display: flex;
     justify-content: center;
 }
-
 #menu_admin .btn {
     margin: 10px;
     cursor: pointer;
 }
-
 .menu_visible {
     display: block;
 }
-
 .menu_invisible {
     display: none;
 }
-
 .visible {
     display: block;
 }
-
 .invisible {
     display: none !important;
 }
-
 /******************************************Admin articles**************/
 #admin_article {
     padding: 40px 0px 0px 33px;
 }
-
 .list_content_admin {
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
     margin-top: 15px;
 }
-
 #admin_article .article_content_container {
     display: flex;
     flex-direction: column;
@@ -678,13 +590,12 @@ footer a {
     padding: 15px 5px;
     background: none;
 }
-
 #admin_article .article_content_container img {
     max-width: 100%;
     height: auto;
 }
-#admin_article .article_content_container h3{
-    color:  rgb(68, 74, 80);
+#admin_article .article_content_container h3 {
+    color: rgb(68, 74, 80);
     font-size: 1em;
 }
 #admin_article .article_content_container .bloc_btn {
@@ -692,13 +603,11 @@ footer a {
     display: flex;
     justify-content: space-evenly;
 }
-
 #admin_article .article_content_container .resume {
     overflow: hidden;
     padding: 0px 10px;
 
 }
-
 #admin_article .article_content_container .date_time {
     display: flex;
     flex-direction: column;
@@ -706,7 +615,6 @@ footer a {
     font-size: 12px;
     margin: 10px;
 }
-
 #admin_article .pagination_buttons {
     display: flex;
     align-content: center;
@@ -714,22 +622,18 @@ footer a {
     justify-content: center;
     margin-top: 10px;
 }
-
 /*****************************************Admin comments**************/
 #admin_comment {
     padding: 40px 0px 0px 33px;
 }
-
 #admin_comment h2 {
     text-align: center;
-    color:rgb(106, 159, 152);
+    color: rgb(106, 159, 152);
 }
-
 .admin_comments_content {
     display: flex;
     flex-flow: row wrap;
 }
-
 #admin_comment_container .admin_content_container {
     display: flex;
     flex-direction: column;
@@ -739,46 +643,40 @@ footer a {
     height: 340px;
     margin: 10px 10px 0px 0px;
     border: 1px solid rgb(106, 159, 152);
-    padding: 15px 5px; 
+    padding: 15px 5px;
 }
-.admin_content_container .date_time{
+.admin_content_container .date_time {
     font-size: small;
     margin-bottom: 10px;
     color: rgb(106, 159, 152);
 }
-.admin_content_container h3{
-    color:  rgb(68, 74, 80);;
+.admin_content_container h3 {
+    color: rgb(68, 74, 80);   
 }
 #admin_comment_container .title_article_comment {
     display: flex;
     flex-flow: row wrap;
     align-items: baseline;
 }
-
 .title_article_comment {
     cursor: pointer;
     padding: 10px;
 }
-
 .com_visible {
     display: flex;
 }
-
 .com_invisible {
     display: none;
 }
-
 /***********************************Admin comments reported**************/
-
 #admin_comment_reported {
     padding: 40px 0px 0px 33px;
 }
-
 #admin_comment_reported h2 {
     text-align: center;
-    color:rgb(106, 159, 152);
+    color: rgb(106, 159, 152);
 }
-#admin_comment_reported .admin_content_container{
+#admin_comment_reported .admin_content_container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -787,13 +685,12 @@ footer a {
     height: 340px;
     margin: 10px 10px 0px 0px;
     border: 1px solid rgb(106, 159, 152);
-    padding: 15px 5px; 
+    padding: 15px 5px;
 }
 #admin_comment_reported .message_report_content {
     color: rgb(218, 103, 74);
     font-size: small;
 }
-
 /*////////////////////////////////////////////EDIT COMMENT PAGE//////////////////////////////////////////////////////////////////*/
 #edit_page_container {
     display: flex;
@@ -801,107 +698,88 @@ footer a {
     justify-content: center;
     margin: 20px;
 }
-
 #edit_page_container form {
     display: flex;
     flex-direction: column;
 }
-
 #edit_page_container label {
     font-size: larger;
     color: rgb(106, 159, 152)
 }
-
 #area_comment_container {
     height: 300px;
     margin-bottom: 15px;
     padding: 15px;
 }
-
 #edit_page_container input {
     color: rgb(106, 138, 159);
     width: max-content;
     margin: auto;
     padding: 10px;
 }
-
 /*////////////////////////////////////////////CREATE ARTICLE PAGE//////////////////////////////////////////////////////////////////*/
 #create_article_page_container {
     padding: 20px;
 }
-
 #create_article_page_container form {
     display: flex;
     flex-direction: column;
     margin: auto;
 }
-
 #create_article_page_container label {
     color: rgb(106, 159, 152);
     font-size: x-large;
 }
-
 #create_article_page_container #title {
     color: rgb(106, 159, 152);
     width: auto;
     height: 30px;
 }
-
 #create_article_page_container .form_p {
     color: rgb(106, 159, 152);
     font-size: small;
 }
-
 #create_article_page_container .btn {
     width: max-content;
     align-self: center;
     margin: 10px;
 }
-
 /*////////////////////////////////////////////EDIT ARTICLE PAGE//////////////////////////////////////////////////////////////////*/
 #edit_article_page_container {
     padding: 20px;
 }
-
 #edit_article_page_container h1 {
     color: rgb(106, 159, 152);
 }
-
 #edit_article_page_container form {
     display: flex;
     flex-direction: column;
     margin: auto;
 }
-
 #edit_article_page_container label {
     color: rgb(106, 159, 152);
     font-size: x-large;
 }
-
 #edit_article_page_container #title {
     color: rgb(106, 159, 152);
     width: auto;
     height: 30px;
 }
-
 #edit_article_page_container .form_p {
     color: rgb(106, 159, 152);
     font-size: small;
 }
-
 #edit_article_page_container .valid_btn {
     width: max-content;
     align-self: center;
     margin: 10px;
 }
-
 #edit_article_page_container img {
     margin-top: 10px;
     height: auto;
     max-height: 100vh;
     max-width: 100%;
 }
-
 /*////////////////////////////////////////////LOGIN PAGE//////////////////////////////////////////////////////////////////*/
 #login_forms_container {
     display: flex;
@@ -911,9 +789,7 @@ footer a {
     box-shadow: 5px 5px 2px 1px rgba(27, 33, 39, 0.5);
     width: 100%;
     height: 100%;
-
 }
-
 #log_forms {
     display: flex;
     justify-content: space-evenly;
@@ -921,29 +797,25 @@ footer a {
     height: max-content;
     align-self: center;
 }
-
 #log_forms h3 {
     color: rgb(106, 159, 152);
     margin-bottom: 10px;
 }
-
 #log_forms input {
     margin-bottom: 10px;
     padding: 5px;
 }
-
 #login_form_container form {
     display: flex;
     flex-direction: column;
 }
-#register_form_container{
+#register_form_container {
     max-width: 30%;
 }
 #register_form_container form {
     display: flex;
     flex-direction: column;
 }
-
 #register_form_container::before {
     content: " ";
     background-color: rgb(106, 159, 152);
@@ -952,45 +824,38 @@ footer a {
     position: absolute;
     right: 35%;
 }
-
 #error_login_container {
     width: max-content;
     margin: auto;
     border-bottom: rgb(218, 103, 74) 1px solid;
     padding: 5px;
 }
-
 #error_login_container li {
     list-style: none;
     color: rgb(218, 103, 74);
 }
-
 #login_forms_container .btn {
     margin-top: 10px;
 }
-
 #login_forms_container label {
     color: rgb(106, 159, 152);
     font-size: small;
 }
-
 #login_forms_container .error_message {
     font-size: 0.8em;
     font-family: 'Oswald', sans-serif;
 }
-
 /*////////////////////////////////////////////////////////////////ALERT MESSAGE/////////////////////////////////////////////////////////////////////*/
 .alert {
     position: absolute;
     margin: auto;
     width: 70%;
     right: 0;
-    background-color: rgba(0,0,0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     padding: 20px 0px;
     font-size: 1.2em;
     word-break: break-all;
 }
-
 .alert-success {
     color: rgb(133, 173, 151);
     text-align: center;
@@ -998,7 +863,6 @@ footer a {
     justify-content: center;
     align-items: center;
 }
-
 .alert-success::before {
     content: " ";
     background-color: rgb(133, 173, 151);
@@ -1006,16 +870,13 @@ footer a {
     height: 2px;
     margin-right: 10px;
 }
-
 .alert-success::after {
     content: " ";
     background-color: rgb(133, 173, 151);
     width: 100px;
     height: 2px;
     margin-left: 10px;
-
 }
-
 .alert-fail {
     color: rgb(218, 103, 74);
     text-align: center;
@@ -1023,7 +884,6 @@ footer a {
     justify-content: center;
     align-items: center;
 }
-
 .alert-fail::before {
     content: " ";
     background-color: rgb(218, 103, 74);
@@ -1031,7 +891,6 @@ footer a {
     height: 2px;
     margin-right: 10px;
 }
-
 .alert-fail::after {
     content: " ";
     background-color: rgb(218, 103, 74);

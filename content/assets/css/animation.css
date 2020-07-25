@@ -90,7 +90,6 @@
     font-weight: 200;
     font-size: 4em;
   }
-  
   .ml9 .text-wrapper {
     position: relative;
     display: inline-block;
@@ -99,13 +98,11 @@
     padding-bottom: 0.1em;
     overflow: hidden;
   }
-  
   .ml9 .letter {
     transform-origin: 50% 100%;
     display: inline-block;
     line-height: 1em;
     font-weight: bolder;
     font-size: larger;
-
   }
   

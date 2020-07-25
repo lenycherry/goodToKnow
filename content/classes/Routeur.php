@@ -3,8 +3,7 @@
 namespace content\classes;
 
 class Routeur
-{
-   
+{  
     private $request;
 
     private $routes = [
@@ -16,12 +15,13 @@ class Routeur
         'logout'       => ['controller' => 'SessionController', 'method' => 'logout'],
         'confirmation' => ['controller' => 'SessionController', 'method' => 'confirmationMail'],
         
-
         'createArticle' => ['controller' => 'ArticleController', 'method' => 'showCreateArticle'],
         'editArticle'   => ['controller' => 'ArticleController', 'method' => 'showEditArticle'],
         'updateArticle' => ['controller' => 'ArticleController', 'method' => 'updateArticle'],
         'addArticle'    => ['controller' => 'ArticleController', 'method' => 'addArticle'],
-        'deleteArticle' => ['controller' => 'ArticleController', 'method' => 'deleteArticle'],               
+        'deleteArticle' => ['controller' => 'ArticleController', 'method' => 'deleteArticle'],
+        'article'       => ['controller' => 'ArticleController', 'method' => 'showArticle'],
+        'articles'      => ['controller' => 'ArticleController', 'method' => 'showAllArticles'],               
 
         'createComment' => ['controller' => 'CommentController', 'method' => 'showCreateComment'],
         'editComment'   => ['controller' => 'CommentController', 'method' => 'showEditComment'],
@@ -30,12 +30,11 @@ class Routeur
         'deleteComment' => ['controller' => 'CommentController', 'method' => 'deleteComment'],
         'reportComment' => ['controller' => 'CommentController', 'method' => 'reportComment'],
         'acquitComment' => ['controller' => 'CommentController', 'method' => 'acquitComment'],
-        'jsonComment' => ['controller' => 'CommentController', 'method' => 'findJsonComment'],
+        'jsonComment'   => ['controller' => 'CommentController', 'method' => 'findJsonComment'],
 
         'adminPanel'    => ['controller' => 'AdminPanel',        'method' => 'showAdminPanel'],
         'home'          => ['controller' => 'Home',              'method' => 'showHome'],
-        'article'       => ['controller' => 'ArticleController', 'method' => 'showArticle'],
-        'articles'       => ['controller' => 'ArticleController', 'method' => 'showAllArticles'],
+
     ];
 
     public function __construct($request)

@@ -11,7 +11,6 @@ class CommentManager extends Manager
     public function findComment($id)
     {
         $req = $this->bdd->prepare("SELECT * , DATE_FORMAT(create_date, '%d/%m/%Y %Hh%imin%ss') AS create_date, DATE_FORMAT(edit_date, '%d/%m/%Y %Hh%imin%ss') AS edit_date FROM GTK_comments WHERE id = :id ");
-        //$req = $this->bdd->prepare("SELECT DATE_FORMAT(create_date, '%d/%m/%Y %Hh%imin%ss') AS create_date FROM comments WHERE id = :id ");
         $req->bindValue(':id', $id, PDO::PARAM_INT); // définition de la valeur de :id soit le param $id de la fonction en var int
         $req->execute();
         $result = $req->fetch(PDO::FETCH_ASSOC); //stock le résultat de la requête dans la var result

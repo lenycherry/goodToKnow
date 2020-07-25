@@ -10,7 +10,6 @@ class SessionManager extends Manager
     public function formRegister($params)
     {
         extract($params);
-
         $pseudo = htmlentities(trim($pseudo));
         $mail = htmlentities(strtolower(trim($mail)));
         $mdp = trim($mdp);
@@ -54,7 +53,6 @@ class SessionManager extends Manager
     }
     public function verifLogin($pseudo)
     {
-
         $user = $this->bdd->prepare("SELECT * FROM GTK_users WHERE (pseudo = :pseudo OR mail = :pseudo)");
         $user->bindValue(':pseudo', $pseudo, PDO::PARAM_STR);
         $user->execute();
