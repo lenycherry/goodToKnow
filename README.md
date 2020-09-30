@@ -1,9 +1,10 @@
 ## GOOD to know, personnal school project JS PHP MySQL :open_book:
-For validate my last web developper training, i have to create alone a personnal project with all the technologies and processes i learned.
+To validate my last web developper training, i have to create alone a personnal project with all technologies and processes i learned.
 
-I chose to create an information website on ecology. the Web is a great communication platform that can be used for good causes, such as education  and information on the world around us.
-This site will be able to highlight the last published article, see all the available articles at a glance and allow registered users to react to 
-each article in real time with comments.
+I chose to create an information website based on ecology. Internet is a great communication platform that can be used for good causes, such as education  and information on the world around us.
+This website will be able to highlight the last published article, see all the available articles at a glance and allow registered users to react for 
+each article in real time with comments.  
+I wanted a clear and usefull informative website with accessible articles that were easy to understand and enjoyable to read on computer or phone.
 
 
 ### Mandatory pre-requisite
@@ -15,7 +16,7 @@ each article in real time with comments.
 * Manage security flaw (XSS,CRLF,SQL injection, password hash,...).
 * SEO
 * W3C standard
-* Use CSS3 and Javascript to manage Front-end and create a dynamic site.
+* Use CSS3 and Javascript to manage Front-end and create a dynamic website.
 * Responsiv
 
 ###  Personnal Plus
